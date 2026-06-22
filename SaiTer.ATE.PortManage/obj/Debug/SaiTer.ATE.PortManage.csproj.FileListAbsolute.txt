@@ -1,0 +1,7 @@
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.PortManage.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.PortManage.pdb
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.PortManage\obj\Debug\SaiTer.ATE.PortManage.csproj.AssemblyReference.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.PortManage\obj\Debug\SaiTer.ATE.PortManage.csproj.CoreCompileInputs.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.PortManage\obj\Debug\SaiTer.ATE.PortManage.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.PortManage\obj\Debug\SaiTer.ATE.PortManage.pdb
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.PortManage\obj\Debug\SaiTer.A.38121FD0.Up2Date

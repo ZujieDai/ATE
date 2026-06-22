@@ -1,0 +1,9 @@
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.DataModel.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.DataModel.pdb
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.DataModel\obj\Debug\SaiTer.ATE.DataModel.csproj.AssemblyReference.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.DataModel\obj\Debug\SaiTer.ATE.DataModel.Properties.Resources.resources
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.DataModel\obj\Debug\SaiTer.ATE.DataModel.csproj.GenerateResource.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.DataModel\obj\Debug\SaiTer.ATE.DataModel.csproj.CoreCompileInputs.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.DataModel\obj\Debug\SaiTer.ATE.DataModel.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.DataModel\obj\Debug\SaiTer.ATE.DataModel.pdb
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.DataModel\obj\Debug\SaiTer.A.3C773DC5.Up2Date

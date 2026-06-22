@@ -1,0 +1,11 @@
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.StringResources.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.StringResources.pdb
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\en\SaiTer.ATE.StringResources.resources.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.StringResources\obj\Debug\SaiTer.ATE.StringResources.csproj.AssemblyReference.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.StringResources\obj\Debug\SaiTer.ATE.StringResources.Resource.resources
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.StringResources\obj\Debug\SaiTer.ATE.StringResources.Resource.en.resources
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.StringResources\obj\Debug\SaiTer.ATE.StringResources.csproj.GenerateResource.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.StringResources\obj\Debug\SaiTer.ATE.StringResources.csproj.CoreCompileInputs.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.StringResources\obj\Debug\en\SaiTer.ATE.StringResources.resources.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.StringResources\obj\Debug\SaiTer.ATE.StringResources.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.StringResources\obj\Debug\SaiTer.ATE.StringResources.pdb

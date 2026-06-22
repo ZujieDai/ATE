@@ -1,0 +1,12 @@
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Business\obj\Debug\SaiTer.ATE.Business.csproj.AssemblyReference.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Business\obj\Debug\SaiTer.ATE.Business.csproj.CoreCompileInputs.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.Business.dll.config
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.Business.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.Business.pdb
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Business\obj\Debug\SaiTer.ATE.Business.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Business\obj\Debug\SaiTer.ATE.Business.pdb
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Business\obj\Debug\SaiTer.A.40FD08CA.Up2Date
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\x86\libHarfBuzzSharp.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\x64\libHarfBuzzSharp.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\arm64\libHarfBuzzSharp.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\libHarfBuzzSharp.dylib

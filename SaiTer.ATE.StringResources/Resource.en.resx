@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="12V过压状态" xml:space="preserve">
+    <value>Voltage Over State _ 12V</value>
+  </data>
+  <data name="24V过压状态" xml:space="preserve">
+    <value>Voltage Over State _ 24V</value>
+  </data>
+  <data name="ABC三相切换" xml:space="preserve">
+    <value>ABC three-phase switching</value>
+  </data>
+  <data name="BMS需求电压(V)" xml:space="preserve">
+    <value>BMS Demand Voltage(V)</value>
+  </data>
+  <data name="CC1电压" xml:space="preserve">
+    <value>CC1 Voltage</value>
+  </data>
+  <data name="CC2电压" xml:space="preserve">
+    <value>CC2 Voltage</value>
+  </data>
+  <data name="CP占空比" xml:space="preserve">
+    <value>CP Duty Cycle</value>
+  </data>
+  <data name="CP电压" xml:space="preserve">
+    <value>CP Voltage</value>
+  </data>
+  <data name="CP频率" xml:space="preserve">
+    <value>CP Frequency</value>
+  </data>
+  <data name="DC+温度" xml:space="preserve">
+    <value>DC+temperature</value>
+  </data>
+  <data name="DC-温度" xml:space="preserve">
+    <value>DC- temperature</value>
+  </data>
+  <data name="FrmEquipOperate" xml:space="preserve">
+    <value>Equipment Operate</value>
+  </data>
+  <data name="GDM万用表" xml:space="preserve">
+    <value>GDM Multimeter</value>
+  </data>
+  <data name="K1K2外侧电压(V)" xml:space="preserve">
+    <value>K1K2 External voltage (V)</value>
+  </data>
+  <data name="label1" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="label2" xml:space="preserve">
+    <value>Real time monitoring of equipment status</value>
+  </data>
+  <data name="lab_Left2Caption" xml:space="preserve">
+    <value>ChargerInfo</value>
+  </data>
+  <data name="lab_Left3Caption" xml:space="preserve">
+    <value>TrialItems</value>
+  </data>
+  <data name="lab_MainCaption" xml:space="preserve">
+    <value>TrialData</value>
+  </data>
+  <data name="lab_Right3Caption" xml:space="preserve">
+    <value>Connection status</value>
+  </data>
+  <data name="lblLog" xml:space="preserve">
+    <value>Running State</value>
+  </data>
+  <data name="ProxDetect" xml:space="preserve">
+    <value>ProxDetect</value>
+  </data>
+  <data name="S1开关状态" xml:space="preserve">
+    <value>S1 Switch status</value>
+  </data>
+  <data name="S2开关状态" xml:space="preserve">
+    <value>S2 Switch status</value>
+  </data>
+  <data name="S3开关状态" xml:space="preserve">
+    <value>S3 Switch status</value>
+  </data>
+  <data name="Signal d1" xml:space="preserve">
+    <value>Signal d1</value>
+  </data>
+  <data name="Signal d2" xml:space="preserve">
+    <value>Signal d2</value>
+  </data>
+  <data name="Signal k" xml:space="preserve">
+    <value>Signal k</value>
+  </data>
+  <data name="枪" xml:space="preserve">
+    <value>ChN</value>
+  </data>
+  <data name="tsBtnAddChargeInfo" xml:space="preserve">
+    <value>ChargerInfo</value>
+  </data>
+  <data name="tsBtnAuto" xml:space="preserve">
+    <value>AutoTest</value>
+  </data>
+  <data name="tsBtnCAN" xml:space="preserve">
+    <value>CAN</value>
+  </data>
+  <data name="tsBtnEditScheme" xml:space="preserve">
+    <value>EditScheme</value>
+  </data>
+  <data name="tsBtnEquipOperate" xml:space="preserve">
+    <value>EquipOperate</value>
+  </data>
+  <data name="tsBtnMESSet" xml:space="preserve">
+    <value>MES Set</value>
+  </data>
+  <data name="tsBtnPortSet" xml:space="preserve">
+    <value>ComSet</value>
+  </data>
+  <data name="tsBtnRegist" xml:space="preserve">
+    <value>Regist</value>
+  </data>
+  <data name="tsBtnSaveData" xml:space="preserve">
+    <value>SaveData</value>
+  </data>
+  <data name="tsBtnSchemeSelect" xml:space="preserve">
+    <value>schemeSelect</value>
+  </data>
+  <data name="tsBtnSysParam" xml:space="preserve">
+    <value>EqiupSet</value>
+  </data>
+  <data name="tsBtnTrialData" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="tsBtnTrialStart" xml:space="preserve">
+    <value>TrialStart</value>
+  </data>
+  <data name="tsBtnTrialStop" xml:space="preserve">
+    <value>TrialStop</value>
+  </data>
+  <data name="tsBtnUser" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="ucChargerInfo.chbAllTestItems" xml:space="preserve">
+    <value>All test Items</value>
+  </data>
+  <data name="ucChargerInfo.chbCharger1" xml:space="preserve">
+    <value>Charger</value>
+  </data>
+  <data name="ucConnectState.clmBaudRate" xml:space="preserve">
+    <value>BaudRate/IP</value>
+  </data>
+  <data name="ucConnectState.clmCom" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="ucConnectState.clmName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ucLog.label2" xml:space="preserve">
+    <value>Final Result</value>
+  </data>
+  <data name="ZJ剩余电流保护测试仪" xml:space="preserve">
+    <value>ZJ Leakage current tester</value>
+  </data>
+  <data name="ΣA组三相功率因数" xml:space="preserve">
+    <value>ΣA Three-phase total power factory</value>
+  </data>
+  <data name="ΣA组三相总功率(kW)" xml:space="preserve">
+    <value>ΣA Three-phase total power(kW)</value>
+  </data>
+  <data name="ΣA组三相总电压值(V)" xml:space="preserve">
+    <value>ΣA Three-phase total voltage(V)</value>
+  </data>
+  <data name="ΣA组三相总电流值(V)" xml:space="preserve">
+    <value>ΣA Three-phase total Current(A)</value>
+  </data>
+  <data name="万用表" xml:space="preserve">
+    <value>MultiMeter</value>
+  </data>
+  <data name="上限" xml:space="preserve">
+    <value>MaxValue</value>
+  </data>
+  <data name="下限" xml:space="preserve">
+    <value>MinValue</value>
+  </data>
+  <data name="交流" xml:space="preserve">
+    <value>AC</value>
+  </data>
+  <data name="交流回馈负载" xml:space="preserve">
+    <value>AC Feedback Load</value>
+  </data>
+  <data name="交流导引BMS" xml:space="preserve">
+    <value>AC_BMS</value>
+  </data>
+  <data name="交流源" xml:space="preserve">
+    <value>AC Source</value>
+  </data>
+  <data name="交流电阻负载" xml:space="preserve">
+    <value>AC Resistive load</value>
+  </data>
+  <data name="供电电压(V)" xml:space="preserve">
+    <value>Supply voltage(V)</value>
+  </data>
+  <data name="供电电流(A)" xml:space="preserve">
+    <value>Supply current(A)</value>
+  </data>
+  <data name="供电频率(Hz)" xml:space="preserve">
+    <value>Supply Freq(Hz)</value>
+  </data>
+  <data name="保存数据会封存当前枪信息的所有检测数据" xml:space="preserve">
+    <value>Saving the data will seal all detection data of the current gun information. \r\nAfter successful saving, it is necessary to re-enter the gun information. Do you need to save it</value>
+  </data>
+  <data name="允许充电电流" xml:space="preserve">
+    <value>Allowable charging current</value>
+  </data>
+  <data name="充电功率" xml:space="preserve">
+    <value>Charging Power</value>
+  </data>
+  <data name="充电桩模拟器" xml:space="preserve">
+    <value>Charger</value>
+  </data>
+  <data name="充电状态" xml:space="preserve">
+    <value>charger state</value>
+  </data>
+  <data name="充电电压" xml:space="preserve">
+    <value>charging voltage</value>
+  </data>
+  <data name="充电电流" xml:space="preserve">
+    <value>charging current</value>
+  </data>
+  <data name="充电电量" xml:space="preserve">
+    <value>Charging Capacity</value>
+  </data>
+  <data name="剩余电流保护测试仪" xml:space="preserve">
+    <value>Leakage current tester</value>
+  </data>
+  <data name="功率" xml:space="preserve">
+    <value>Power</value>
+  </data>
+  <data name="功率分析仪" xml:space="preserve">
+    <value>Power analyzer</value>
+  </data>
+  <data name="功率因数" xml:space="preserve">
+    <value>Power factory</value>
+  </data>
+  <data name="占空比" xml:space="preserve">
+    <value>Duty cycle</value>
+  </data>
+  <data name="号枪" xml:space="preserve">
+    <value>Charger</value>
+  </data>
+  <data name="号枪互操作" xml:space="preserve">
+    <value>Interoperability</value>
+  </data>
+  <data name="号枪位示波器截图" xml:space="preserve">
+    <value>position  Screenshot of oscilloscope </value>
+  </data>
+  <data name="回馈负载" xml:space="preserve">
+    <value>Feedback Load</value>
+  </data>
+  <data name="国标" xml:space="preserve">
+    <value>GB</value>
+  </data>
+  <data name="国标直流导引BMS" xml:space="preserve">
+    <value>GB_DC_BMS</value>
+  </data>
+  <data name="在线设备(台)" xml:space="preserve">
+    <value>Online Equip(piece)</value>
+  </data>
+  <data name="多通道交流" xml:space="preserve">
+    <value>AC-MultiChannel</value>
+  </data>
+  <data name="多通道直流" xml:space="preserve">
+    <value>DC-MultiChannel</value>
+  </data>
+  <data name="安规" xml:space="preserve">
+    <value>Safety</value>
+  </data>
+  <data name="实时电压(V)" xml:space="preserve">
+    <value>Real-time voltage (V)</value>
+  </data>
+  <data name="实时电流(mA)" xml:space="preserve">
+    <value>Real-time current (mA)</value>
+  </data>
+  <data name="实际" xml:space="preserve">
+    <value>Real</value>
+  </data>
+  <data name="当前测试开始时间" xml:space="preserve">
+    <value>Current test start time</value>
+  </data>
+  <data name="当前测试结束时间" xml:space="preserve">
+    <value>Current test end time</value>
+  </data>
+  <data name="当前测试耗时" xml:space="preserve">
+    <value>Current test time</value>
+  </data>
+  <data name="当日不合格桩数量" xml:space="preserve">
+    <value>Number of unqualified chargers today</value>
+  </data>
+  <data name="当日合格桩数量" xml:space="preserve">
+    <value>Number of qualified chargers today</value>
+  </data>
+  <data name="当日合格率(%)" xml:space="preserve">
+    <value>Day pass rate (%)</value>
+  </data>
+  <data name="当日测试桩总数量" xml:space="preserve">
+    <value>Total number of chargers tested today</value>
+  </data>
+  <data name="录波板" xml:space="preserve">
+    <value>Wave Recorder</value>
+  </data>
+  <data name="待测..." xml:space="preserve">
+    <value>Waiting</value>
+  </data>
+  <data name="截图" xml:space="preserve">
+    <value>screen</value>
+  </data>
+  <data name="所有充电桩未做任何测试无法保存" xml:space="preserve">
+    <value>All charging piles cannot be saved without any testing</value>
+  </data>
+  <data name="报文" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="报表" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="报表(勿删)" xml:space="preserve">
+    <value>Report(Donot Delete)</value>
+  </data>
+  <data name="报警显示" xml:space="preserve">
+    <value>Alarm display</value>
+  </data>
+  <data name="提示" xml:space="preserve">
+    <value>Tips</value>
+  </data>
+  <data name="操作状态" xml:space="preserve">
+    <value>Operation status</value>
+  </data>
+  <data name="效率值" xml:space="preserve">
+    <value>Efficiency</value>
+  </data>
+  <data name="数据保存失败" xml:space="preserve">
+    <value>Data save failure</value>
+  </data>
+  <data name="数据保存成功当前枪信息已删除请重新录入桩信息" xml:space="preserve">
+    <value>The data is saved successfully, the current gun information has been deleted, please re-enter the pile information</value>
+  </data>
+  <data name="数据项" xml:space="preserve">
+    <value>Data Item</value>
+  </data>
+  <data name="施加漏电测脱扣时间" xml:space="preserve">
+    <value>Applied leakage test trip time</value>
+  </data>
+  <data name="施加漏电测脱扣电流" xml:space="preserve">
+    <value>Applied leakage test trip current</value>
+  </data>
+  <data name="日标" xml:space="preserve">
+    <value>JP</value>
+  </data>
+  <data name="日标直流导引BMS" xml:space="preserve">
+    <value>JP_DC_BMS</value>
+  </data>
+  <data name="最大功率(kW)" xml:space="preserve">
+    <value>Pmax(kW)</value>
+  </data>
+  <data name="有充电桩未做任何测试.无法保存" xml:space="preserve">
+    <value>There are chargers that haven't been tested and can't be saved</value>
+  </data>
+  <data name="未脱扣" xml:space="preserve">
+    <value>On trip</value>
+  </data>
+  <data name="枪号" xml:space="preserve">
+    <value>ChargerNum</value>
+  </data>
+  <data name="枪座温度" xml:space="preserve">
+    <value>seat temperature</value>
+  </data>
+  <data name="枪连接状态" xml:space="preserve">
+    <value>Charger connection status</value>
+  </data>
+  <data name="查看录波截图" xml:space="preserve">
+    <value>screenshot</value>
+  </data>
+  <data name="查看示波器截图" xml:space="preserve">
+    <value>screenshot</value>
+  </data>
+  <data name="检定项" xml:space="preserve">
+    <value>Trial Item</value>
+  </data>
+  <data name="检测中" xml:space="preserve">
+    <value>Testing</value>
+  </data>
+  <data name="检测刷卡上电状态" xml:space="preserve">
+    <value>Check the  power-on status</value>
+  </data>
+  <data name="检测方案" xml:space="preserve">
+    <value>Test Scheme</value>
+  </data>
+  <data name="检测系统开启处于空闲状态" xml:space="preserve">
+    <value>The detection system is enabled and idle</value>
+  </data>
+  <data name="检测结果" xml:space="preserve">
+    <value>TrialResult</value>
+  </data>
+  <data name="欧标" xml:space="preserve">
+    <value>EA</value>
+  </data>
+  <data name="欧标直流导引BMS" xml:space="preserve">
+    <value>EA_DC_BMS</value>
+  </data>
+  <data name="测动作时间" xml:space="preserve">
+    <value>Measuring action time(ms)</value>
+  </data>
+  <data name="测动作电流" xml:space="preserve">
+    <value>Measuring action current(mA)</value>
+  </data>
+  <data name="测试时间(mS)" xml:space="preserve">
+    <value>Test time (ms)</value>
+  </data>
+  <data name="测试电流(mA)" xml:space="preserve">
+    <value>Test current (mA)</value>
+  </data>
+  <data name="测试结果" xml:space="preserve">
+    <value>Trial Result</value>
+  </data>
+  <data name="测量值" xml:space="preserve">
+    <value>Measured Value</value>
+  </data>
+  <data name="版本号" xml:space="preserve">
+    <value>Version Number</value>
+  </data>
+  <data name="状态" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="环境温度" xml:space="preserve">
+    <value>Ambient temperature</value>
+  </data>
+  <data name="用户名和密码不能为空" xml:space="preserve">
+    <value>The user name and password cannot be empty</value>
+  </data>
+  <data name="用户名或密码不正确" xml:space="preserve">
+    <value>The user name or password is incorrect</value>
+  </data>
+  <data name="电压" xml:space="preserve">
+    <value>Voltage</value>
+  </data>
+  <data name="电子负载" xml:space="preserve">
+    <value>Electronic load</value>
+  </data>
+  <data name="电流" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="电表" xml:space="preserve">
+    <value>Meter</value>
+  </data>
+  <data name="电阻" xml:space="preserve">
+    <value>Resistance</value>
+  </data>
+  <data name="电阻负载" xml:space="preserve">
+    <value>Resistive load</value>
+  </data>
+  <data name="登录成功" xml:space="preserve">
+    <value>login successfully</value>
+  </data>
+  <data name="直流" xml:space="preserve">
+    <value>DC</value>
+  </data>
+  <data name="直流导引BMS" xml:space="preserve">
+    <value>DC_BMS</value>
+  </data>
+  <data name="直流电阻负载" xml:space="preserve">
+    <value>DC Resistive load</value>
+  </data>
+  <data name="示波器" xml:space="preserve">
+    <value>Oscilloscope</value>
+  </data>
+  <data name="程控板" xml:space="preserve">
+    <value>Param Board</value>
+  </data>
+  <data name="管理员" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="系统状态" xml:space="preserve">
+    <value>System state</value>
+  </data>
+  <data name="继电器" xml:space="preserve">
+    <value>Relay</value>
+  </data>
+  <data name="美标" xml:space="preserve">
+    <value>UA</value>
+  </data>
+  <data name="美标直流导引BMS" xml:space="preserve">
+    <value>美标直流导引BMS</value>
+  </data>
+  <data name="超级管理员" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
+  <data name="辅助电源电压" xml:space="preserve">
+    <value>Auxiliary supply voltage</value>
+  </data>
+  <data name="辅源电流(A)" xml:space="preserve">
+    <value>Auxiliary source current(A)</value>
+  </data>
+  <data name="辅源短路状态" xml:space="preserve">
+    <value>Short-circuited State</value>
+  </data>
+  <data name="辅源负载" xml:space="preserve">
+    <value>AuxiliaryLoad</value>
+  </data>
+  <data name="输入功率值(W)" xml:space="preserve">
+    <value>Input power(W)</value>
+  </data>
+  <data name="输入电压值(V)" xml:space="preserve">
+    <value>Input voltage(V)</value>
+  </data>
+  <data name="输入电流值(A)" xml:space="preserve">
+    <value>Input current(A)</value>
+  </data>
+  <data name="输出电压(V)" xml:space="preserve">
+    <value>Output Voltage(V)</value>
+  </data>
+  <data name="过压参考值(V)" xml:space="preserve">
+    <value>Output Over Voltage(V)</value>
+  </data>
+  <data name="运行状态" xml:space="preserve">
+    <value>RunStatus</value>
+  </data>
+  <data name="通道" xml:space="preserve">
+    <value>Channel</value>
+  </data>
+  <data name="通道{0} 功率(kW)" xml:space="preserve">
+    <value>CH{0} Power(kW)</value>
+  </data>
+  <data name="通道{0} 功率因数" xml:space="preserve">
+    <value>CH{0} Power Factory</value>
+  </data>
+  <data name="通道{0} 均方根电压(V)" xml:space="preserve">
+    <value>CH{0} RMS Volt(V)</value>
+  </data>
+  <data name="通道{0} 均方根电流(A)" xml:space="preserve">
+    <value>CH{0} RMS Current(A)</value>
+  </data>
+  <data name="通道{0} 无功功率(Var)" xml:space="preserve">
+    <value>CH{0} Reactive Power(Var)</value>
+  </data>
+  <data name="重新注册" xml:space="preserve">
+    <value>re-registration</value>
+  </data>
+  <data name="错误信息" xml:space="preserve">
+    <value>Error Message</value>
+  </data>
+  <data name="需求" xml:space="preserve">
+    <value>Demand</value>
+  </data>
+  <data name="预先调整动作电流" xml:space="preserve">
+    <value>Pre-adjust the action current</value>
+  </data>
+  <data name="频率" xml:space="preserve">
+    <value>Freq</value>
+  </data>
+  <data name="额定电流(A)" xml:space="preserve">
+    <value>In(A)</value>
+  </data>
+</root>

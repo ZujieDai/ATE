@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F4718A5E-8722-43B9-9F1A-FF6C1A9F660F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SaiTer.ATE.EquipMent</RootNamespace>
+    <AssemblyName>SaiTer.ATE.EquipMent</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\SaiTer.ATE.Exe\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NationalInstruments.Common, Version=19.0.40.49152, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SaiTer.ATE.Exe\Debug\NationalInstruments.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="nationalinstruments.visans, Version=9.0.40.156, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SaiTer.ATE.Exe\Debug\nationalinstruments.visans.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.6.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="SaiTer.ATE.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SaiTer.ATE.Exe\Debug\SaiTer.ATE.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="SaiterUtilsAlgorithm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SaiTer.ATE.Exe\Debug\SaiterUtilsAlgorithm.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI, Version=3.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SaiTer.ATE.Exe\Debug\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TmctlAPINet, Version=4.1.1.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="ZedGraph, Version=5.1.4.31904, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SaiTer.ATE.Exe\Debug\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACSource\emtACSource_AKSB.cs" />
+    <Compile Include="ACSource\emtACSource_AN.cs" />
+    <Compile Include="ACSource\emtACSource_CtrlBoard.cs" />
+    <Compile Include="ACSource\emtACSource_GT.cs" />
+    <Compile Include="ACSource\emtACSource_HY.cs" />
+    <Compile Include="ACSource\emtACSource_SPWY.cs" />
+    <Compile Include="ACSource\emtACSource_STAS.cs" />
+    <Compile Include="ACSource\emtACSource_TMP.cs" />
+    <Compile Include="ACSource\emtACSource_XH.cs" />
+    <Compile Include="BMS\BMS_Base.cs" />
+    <Compile Include="BMS\emtBMS_AC.cs" />
+    <Compile Include="BMS\emtBMS_EU_DC.cs" />
+    <Compile Include="BMS\emtBMS_EU_DC_Msg.cs" />
+    <Compile Include="BMS\emtBMS_GB_DC.cs" />
+    <Compile Include="BMS\BMS_Protocol.cs" />
+    <Compile Include="BMS\emtBMS_JP_DC.cs" />
+    <Compile Include="BMS\emtBMS_USA_DC.cs" />
+    <Compile Include="BMS\emtBMS_USA_DC_Msg.cs" />
+    <Compile Include="BMS\ProtocolParser.cs" />
+    <Compile Include="Charger\Charger_Base.cs" />
+    <Compile Include="Charger\emtCharger_NTGX.cs" />
+    <Compile Include="CheckOut.cs" />
+    <Compile Include="ControlBoard\emtControlBoard.cs" />
+    <Compile Include="ControlBoard\emtDIORelay.cs" />
+    <Compile Include="ElectricMeter\ElectricMeter_Base.cs" />
+    <Compile Include="ElectricMeter\emtElectricMeter_DTSD336D.cs" />
+    <Compile Include="ElectricMeter\emtElectricMeter_ZH4041.cs" />
+    <Compile Include="LeakageCurrentTester\emtQCLeakageCurrent.cs" />
+    <Compile Include="LeakageCurrentTester\emtTMLeakageCurrent.cs" />
+    <Compile Include="LeakageCurrentTester\emtZJLeakageCurrent.cs" />
+    <Compile Include="LeakageCurrentTester\LeakageCurrentBase.cs" />
+    <Compile Include="LeakageCurrentTester\LeakageCurrent_Protocol.cs" />
+    <Compile Include="Load\emFeedbackLoad.cs" />
+    <Compile Include="Load\emtFeedbackLoad_YKR.cs" />
+    <Compile Include="Load\emtAuxiliaryLoadCtrl.cs" />
+    <Compile Include="Load\emtElectronicLoad.cs" />
+    <Compile Include="Load\emtFeedbackLoad_AC.cs" />
+    <Compile Include="Load\emtFeedbackLoad_DC_ST.cs" />
+    <Compile Include="Load\emtFeedbackLoad_SZHY.cs" />
+    <Compile Include="Load\emtResistanceLoad_MultiChannel_AC.cs" />
+    <Compile Include="Load\emtResistanceLoad_MultiChannel_DC.cs" />
+    <Compile Include="Load\emtStarLoopFeedbackLoad.cs" />
+    <Compile Include="Load\emtLoopFeedbackLoad.cs" />
+    <Compile Include="Load\emtResistanceLoad_AC.cs" />
+    <Compile Include="EquipMentBase.cs" />
+    <Compile Include="Load\emtResistanceLoad_DC.cs" />
+    <Compile Include="Load\Load_Base.cs" />
+    <Compile Include="Load\ResisLoad_Protocol.cs" />
+    <Compile Include="MultiMeter\emtDMM6500.cs" />
+    <Compile Include="MultiMeter\emtGDM9061.cs" />
+    <Compile Include="NPIOUtil.cs" />
+    <Compile Include="OscillographInstrument\emtOscillographInstrument.cs" />
+    <Compile Include="OscillographInstrument\OscillographInstrument_Base.cs" />
+    <Compile Include="Oscilloscope\CommonOscilloscope.cs" />
+    <Compile Include="Oscilloscope\DLMOscilloscope.cs" />
+    <Compile Include="Oscilloscope\emtKSOscilloscope_3000X.cs" />
+    <Compile Include="Oscilloscope\emtRIGOLOscilloscope_MSO5000.cs" />
+    <Compile Include="Oscilloscope\emtTekOscilloscope.cs" />
+    <Compile Include="Oscilloscope\emtTekOscilloscope_MDO34.cs" />
+    <Compile Include="Oscilloscope\Filtering.cs" />
+    <Compile Include="Oscilloscope\Osilloscope_Base.cs" />
+    <Compile Include="Oscilloscope\SDSOscilloscope.cs" />
+    <Compile Include="PowerAnalyzer\emtPA6000.cs" />
+    <Compile Include="PowerAnalyzer\emtWT333E.cs" />
+    <Compile Include="PowerAnalyzer\emtWT5000.cs" />
+    <Compile Include="PowerAnalyzer\PowerAnalyzer_Base.cs" />
+    <Compile Include="PowerAnalyzer\emtPA6500.cs" />
+    <Compile Include="PowerAnalyzer\PowerAnalyzer_Protocol.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Safety\emtSafety.cs" />
+    <Compile Include="Safety\emtSafety_SE7441.cs" />
+    <Compile Include="Safety\proSafety.cs" />
+    <Compile Include="WaveRecorder\DrawGraphics.cs" />
+    <Compile Include="WaveRecorder\emtWaveRecoderBoard.cs" />
+    <Compile Include="WaveRecorder\emtWaveRecoderBoard30.cs" />
+    <Compile Include="WaveRecorder\FrmWaveRecoder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaveRecorder\FrmWaveRecoder.Designer.cs">
+      <DependentUpon>FrmWaveRecoder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaveRecorder\WaveRecoderBase.cs" />
+    <Compile Include="WaveRecorder\WaveRecorderProtocol.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SaiTer.ATE.DataModel\SaiTer.ATE.DataModel.csproj">
+      <Project>{d5a2d6b4-9516-4d5e-9b0a-e68891f05d45}</Project>
+      <Name>SaiTer.ATE.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.IDAL\SaiTer.ATE.IDAL.csproj">
+      <Project>{3d7cc45f-a46e-4dc5-871a-03d35207bb4d}</Project>
+      <Name>SaiTer.ATE.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.InterFace\SaiTer.ATE.InterFace.csproj">
+      <Project>{211b5cc1-59d4-480e-9307-978486139b83}</Project>
+      <Name>SaiTer.ATE.InterFace</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.PortManage\SaiTer.ATE.PortManage.csproj">
+      <Project>{fa8893e7-0d9c-4a84-aff5-d7b24eda19d3}</Project>
+      <Name>SaiTer.ATE.PortManage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.StringResources\SaiTer.ATE.StringResources.csproj">
+      <Project>{3ffbd6b1-cb29-4afe-8c6c-fac6f491bc19}</Project>
+      <Name>SaiTer.ATE.StringResources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tmctl64.dll" />
+    <Content Include="TmctlAPINet64.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WaveRecorder\FrmWaveRecoder.resx">
+      <DependentUpon>FrmWaveRecoder.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

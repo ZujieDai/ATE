@@ -1,0 +1,481 @@
+﻿using SaiTer.ATE.DataModel;
+using SaiTer.ATE.DataModel.EnumModel;
+using SaiTer.ATE.DataModel.Struct;
+using SaiTer.ATE.InterFace;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
+using System.Threading;
+
+
+namespace SaiTer.ATE.Business
+{
+    /// <summary>
+    /// 交流、直流耐压测试类
+    /// </summary>
+    public class HighVoltage : BusinessBase
+    {
+        List<int> ChargerIndexLst = new List<int>();
+        float trlTimeOut_S = 8;//超时时间
+
+        //界面展示的数据项格式
+        //交（直）流耐压值(kV)|HISET电流值(mA)|LOSET电流值(mA)| 测试时间(S)|斜坡时间(S)|ACW(DCW)参考值(mA)|ARC电流值(mA)|测试频率(Hz)
+
+        string VoltageValue, HISETCurrent, LOSETCurrent, TestTime, RampTime, ACW_DCW, ARC, TestFreq;
+        string info = "";
+        string InputSwitch = "";
+        List<int> lst_Swichs = new List<int>();//多个继电器开关的集合
+        public HighVoltage(int trialType)
+        {
+            TrialType = trialType;
+        }
+        /// <summary>
+        /// 初始化当前检测项信息 
+        /// </summary>
+        public override void InitializeParams()
+        {
+            Init();
+            lst_Swichs.Clear();
+
+            ControlEquipMent.ACSource?.ACSource_OFF(lstIDs);
+            string[] strParams = TrialItem.ResultParams.Split('|');
+            VoltageValue = strParams[0].Split('=')[1].Trim('\r');
+            HISETCurrent = strParams[1].Split('=')[1].Trim('\r');
+            LOSETCurrent = strParams[2].Split('=')[1].Trim('\r');
+            TestTime = strParams[3].Split('=')[1].Trim('\r');
+            RampTime = strParams[4].Split('=')[1].Trim('\r');
+            ACW_DCW = strParams[5].Split('=')[1].Trim('\r');
+            ARC = strParams[6].Split('=')[1].Trim('\r');
+            if (strParams.Length >= 8)
+            {
+                TestFreq = strParams[7].Split('=')[1].Trim('\r');
+            }
+            //和输入有关的测试项，要加一个闭合开关
+            //输入闭合开关（从1开始）=14
+            string[] otherParams = TrialItem.OtherParams?.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries);
+            if (otherParams != null)
+            {
+                if (otherParams[0].Split('=').Length > 1)
+                    InputSwitch = otherParams[0].Split('=')[1].Trim('\r');
+
+                for (int i = 0; i < otherParams.Length; i++)
+                {
+                    if (otherParams[i].Split('=').Count() != 1)
+                    {
+                        lst_Swichs.Add(Convert.ToInt32(otherParams[i].Split('=')[1].Trim('\r')) - 1);
+                    }
+                }
+            }
+
+        }
+        /// <summary>
+        /// 设备初始化
+        /// </summary>
+        public override void InitEquiMent()
+        {
+            SendNoticeToUIAndTxtFile("切换继电器状态");
+            List<bool> list = new List<bool>() { true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
+            EmTrialType emTrialType = (EmTrialType)TrialType;
+            int sw;
+            switch (emTrialType)
+            {
+                case (EmTrialType.直流耐压_输入对地):
+                case (EmTrialType.交流耐压_输入对地):
+                case (EmTrialType.绝缘电阻_输入对地):
+                    //K2,K4
+                    list[5] = true;
+                    list[7] = true;
+                    info = "闭合KM2、KM4 (程控板对应S6、S8继电器";
+                    //if (!string.IsNullOrEmpty(InputSwitch) && int.TryParse(InputSwitch, out sw))
+                    //{
+                    //    sw--;
+                    //    list[sw] = true;
+                    //    info = "闭合KM2、KM4 (程控板对应S6、S8继电器，以及S" + Convert.ToInt32(sw + 1) + ")";
+                    //}
+                    //else
+                    //    info = "闭合KM2、KM4 (程控板对应S6、S8继电器";
+                    foreach (int itmp in lst_Swichs)
+                    {
+                        list[itmp] = true;
+                        info = info + "、S" + (itmp + 1).ToString() + "继电器";
+                    }
+                    info = info + ")";
+                    break;
+                case (EmTrialType.直流耐压_输出对地):
+                case (EmTrialType.绝缘电阻_输出对地):
+                case (EmTrialType.交流耐压_输出对地):
+                    //K1,K4
+                    list[4] = true;
+                    list[7] = true;
+                    info = "闭合KM1、KM4 (程控板对应S5、S8继电器";
+                    //if (!string.IsNullOrEmpty(InputSwitch) && int.TryParse(InputSwitch, out sw))
+                    //{
+                    //    sw--;
+                    //    list[sw] = true;
+                    //    info = "闭合KM1、KM4 (程控板对应S5、S8继电器，以及S" + Convert.ToInt32(sw + 1) + ")";
+                    //}
+                    //else
+                    //    info = "闭合KM1、KM4 (程控板对应S5、S8继电器";
+                    foreach (int itmp in lst_Swichs)
+                    {
+                        list[itmp] = true;
+                        info = info + "、S" + (itmp + 1).ToString() + "继电器";
+                    }
+                    info = info + ")";
+                    break;
+                case (EmTrialType.绝缘电阻_输入对输出):
+                case (EmTrialType.直流耐压_输入对输出):
+                case (EmTrialType.交流耐压_输入对输出):
+                    //K2,K3
+                    list[5] = true;
+                    list[6] = true;
+                    info = "闭合KM2、KM3 (程控板对应S6、S7继电器";
+                    //if (!string.IsNullOrEmpty(InputSwitch) && int.TryParse(InputSwitch, out sw))
+                    //{
+                    //    sw--;
+                    //    list[sw] = true;
+                    //    info = "闭合KM2、KM3 (程控板对应S6、S7继电器，以及S" + Convert.ToInt32(sw + 1) + ")";
+                    //}
+                    //else
+                    //    info = "闭合KM2、KM3 (程控板对应S6、S7继电器";
+                    foreach (int itmp in lst_Swichs)
+                    {
+                        list[itmp] = true;
+                        info = info + "、S" + (itmp + 1).ToString() + "继电器";
+                    }
+                    info = info + ")";
+                    break;
+                case (EmTrialType.接地试验1):
+                case (EmTrialType.接地试验2):
+                case (EmTrialType.接地试验3):
+                    //K4,K5
+                    list[7] = true;
+                    list[8] = true;
+                    info = "闭合KM4、KM5 (程控板对应S8、S9继电器";
+                    foreach (int itmp in lst_Swichs)
+                    {
+                        list[itmp] = true;
+                        info = info + "、S" + (itmp + 1).ToString() + "继电器";
+                    }
+                    info = info + ")";
+                    break;
+            }
+            Thread.Sleep(500);
+
+            ChargerIndexLst = new List<int> { 1 };
+            string SaftyControlNumber = ConfigurationManager.AppSettings["SaftyControlNumber"];
+            if (SaftyControlNumber != null && int.TryParse(SaftyControlNumber, out int num))
+            {
+                ChargerIndexLst = new List<int> { num };
+            }
+            ControlEquipMent.ControlBoard.ControlResistanceSetRelay(ChargerIndexLst, list);
+
+            Thread.Sleep(500);
+            //ControlEquipMent.ControlBoard.ControlResistanceSetRelay(list);
+        }
+        public override void ExecuteMethod()
+        {
+            try
+            {
+                InitializeParams();
+                InitEquiMent();
+                StartItemFlow();
+            }
+            catch (Exception ex)
+            {
+                SendException(ex);
+            }
+            finally
+            {
+                //保存试验结果
+                ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "FUNC:TEST OFF", "\r\n", "\r\n");
+                SaveTrialResult();
+                SendNoticeToUIAndTxtFile(TrialItem.ItemName + "结束---------------------->");
+                //发送试验结束刷新UI
+                SendMessageEndThisTrial();
+            }
+        }
+
+        public void StartItemFlow()
+        {
+            SendNoticeToUIAndTxtFile("开始" + TrialItem.ItemName + "--------------------------->");
+            _StopWatch.Reset();
+            _StopWatch.Start();
+            while (true)
+            {
+                testWorkParam.lstIDs.Clear();
+                for (int i = 0; i < LstTrialData.Count; i++)
+                {
+                    if (LstTrialData[i].IsCheck)
+                    {
+                        if (LstTrialData[i].TrialResult == EmTrialResult.Wait)
+                        {
+                            if (!testWorkParam.lstIDs.Contains(LstTrialData[i].ChargerId))
+                            {
+                                testWorkParam.lstIDs.Add(LstTrialData[i].ChargerId);
+                            }
+                        }
+                    }
+                }
+                //是否全部有结论
+                if (testWorkParam.lstIDs.Count <= 0) break;
+                //是否超时
+                if (_StopWatch.ElapsedMilliseconds / 1000 > trlTimeOut_S)
+                {
+                    for (int i = 0; i < LstTrialData.Count; i++)
+                    {
+                        if (LstTrialData[i].IsCheck)
+                        {
+                            if (LstTrialData[i].TrialResult == EmTrialResult.Wait)
+                            {
+                                LstTrialData[i].TrialResult = EmTrialResult.Fail;
+                                LstTrialData[i].TrialValue = ((int)(_StopWatch.ElapsedMilliseconds / 1000)).ToString();
+                                int k = LstChargerInfo.FindIndex(s => s.ChargerId == LstTrialData[i].ChargerId);
+                                LstTrialData[i].PKID = LstChargerInfo[k].PKID;
+                                //界面展示的数据项格式
+                                //交流耐压值(kV)|HISET电流值(mA)|LOSET电流值(mA)| 测试时间(S)|斜坡时间(S)|ACW参考值(mA)|ARC电流值(mA)|测试频率(Hz)|测试结果
+                                //LstTrialData[k].ExtentData = Result.LstData[0].ToString().TrimEnd('\0');
+                                //LstTrialData[i].ExtentData = VoltageValue + "|" + HISETCurrent + "|" + LOSETCurrent + "|" +
+                                //    TestTime + "|" + RampTime + "|" + ACW_DCW + "|" + ARC;
+                                //if (TrialType == (int)EmTrialType.交流耐压_输入对地
+                                //      || TrialType == (int)EmTrialType.交流耐压_输出对地
+                                //      || TrialType == (int)EmTrialType.交流耐压_输入对输出)
+                                //{
+                                //    LstTrialData[i].ExtentData += "|" + TestFreq;
+                                //}
+                                LstTrialData[i].ExtentData = TrialItem.ItemName.Split('_')[0] + "|" + TrialItem.ItemName.Split('_')[1] + "|-|" + HISETCurrent + "|null";
+                                SendTrialDataToUI(LstTrialData[i]);
+                            }
+                        }
+                    }
+                    break;
+                }
+                ControlEquipMent.Safety.SafetyOFF(testWorkParam.lstIDs);
+                Thread.Sleep(100);
+                int waitTime = 50;
+
+                if (testWorkParam.lstIDs.Count > 0)
+                {
+
+                    SendNoticeToUIAndTxtFile("正在设置安规参数");
+                    ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MAIN:FUNC MANU ", "\r\n", "\r\n");
+                    if (TrialType == (int)EmTrialType.直流耐压_输入对地
+                       || TrialType == (int)EmTrialType.直流耐压_输出对地
+                       || TrialType == (int)EmTrialType.直流耐压_输入对输出)
+                    {
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:EDIT:MODE DCW ", "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:DCW:VOLT " + VoltageValue, "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:DCW:CHIS " + HISETCurrent, "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:DCW:CHIS " + LOSETCurrent, "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:DCW:TTIM " + TestTime, "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:RTIM " + RampTime, "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:DCW:REF " + ACW_DCW, "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:DCW:ARCC " + ARC, "\r\n", "\r\n");
+                    }
+
+                    if (TrialType == (int)EmTrialType.交流耐压_输入对地
+                        || TrialType == (int)EmTrialType.交流耐压_输出对地
+                        || TrialType == (int)EmTrialType.交流耐压_输入对输出)
+                    {
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:EDIT:MODE ACW ", "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:ACW:VOLT " + VoltageValue, "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:ACW:CHIS " + HISETCurrent, "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:ACW:CHIS " + LOSETCurrent, "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:ACW:TTIM " + TestTime, "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:RTIM " + RampTime, "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:ACW:REF " + ACW_DCW, "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:ACW:ARCC " + ARC, "\r\n", "\r\n");
+                        Thread.Sleep(waitTime);
+                        ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "MANU:ACW:FREQ " + TestFreq, "\r\n", "\r\n");
+                    }
+                    SendNoticeToUIAndTxtFile(info + ", 启动安规检测，大约需要 " + (double.Parse(TestTime) + 2.00).ToString() + "秒，等待安规测试仪结果");
+                    ControlEquipMent.Safety.SafetySetParam(testWorkParam.lstIDs, "FUNC:TEST ON", "\r\n", "\r\n");
+                    Stopwatch sw = new Stopwatch();
+                    sw.Start();
+
+                    int num = Convert.ToInt32(double.Parse(TestTime));
+                    int testTime = (Convert.ToInt32(double.Parse(TestTime))) * 1000 + Convert.ToInt32(double.Parse(RampTime) * 1000);
+                    while (sw.ElapsedMilliseconds < testTime)
+                    {
+                        try
+                        {
+                            //解决安规已经FAIL但是还在倒计时的问题
+                            ControlEquipMent.Safety.SafetyReadParam(testWorkParam.lstIDs, "MEAS?", "\r\n", "\r\n");
+                            StResultData Result = ResultData.Dequeue();
+                            //按下安规的停止物理按钮
+                            if (Result.LstData == null || Result.LstData.Count < 1) break;
+                            string[] ReturnStrS = Result.LstData[0].ToString().Split(',');
+                            string rest = ReturnStrS[1].ToUpper().Trim();
+                            if (rest.Equals("FAIL") || rest.Equals("ERROR") || rest.Equals("STOP"))
+                            {
+                                ControlEquipMent.Safety.SafetyOFF(testWorkParam.lstIDs);
+                                Thread.Sleep(500);
+                                break;
+                            }
+
+                            int t = testTime - (int)sw.ElapsedMilliseconds;
+
+                            if (t / 1000 % 5 == 0)
+                            {
+                                if (num != t / 1000)
+                                {
+                                    SystemEvent.SendLogMessage("剩余时间 " + t / 1000 + "秒   \r\t  \r\t ");
+                                    num = t / 1000;
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Log.LogException(ex);
+                        }
+                        Thread.Sleep(100);
+                    }
+                    sw.Stop();
+                    //恢复开关状态
+                    List<bool> list = new List<bool>() { true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false };
+                    ControlEquipMent.ControlBoard.ControlResistanceSetRelay(ChargerIndexLst, list);
+                    Thread.Sleep(1000);
+
+                    SendNoticeToUIAndTxtFile("正在读取安规数据");
+
+                    ControlEquipMent.Safety.SafetyReadParam(testWorkParam.lstIDs, "MEAS?", "\r\n", "\r\n");
+                    //ui发送提示
+                    // CountDownTimeInfo("请断开充电桩输入线缆与测试设备的连接，确认与安规设备符合【输入对地】的接线", 30);
+
+                    //开始判断数据
+                    ProcessData();
+
+                }
+            }
+        }
+
+
+
+        public override void ProcessData()
+        {
+            Stopwatch TempTime = new Stopwatch();
+            TempTime.Reset();
+            TempTime.Start();
+            while (true)
+            {
+                if (ResultData.Count >= testWorkParam.lstIDs.Count)
+                {
+                    break;
+                }
+                if (TempTime.ElapsedMilliseconds / 1000 > 30)
+                {
+                    break;
+                }
+                Thread.Sleep(100);
+            }
+            TempTime.Stop();
+            try
+            {
+                while (ResultData.Count > 0)
+                {
+                    string data = TrialItem.ItemName.Split('_')[0] + "|" + TrialItem.ItemName.Split('_')[1] + "|" + LOSETCurrent + "|" + HISETCurrent + "|null";
+                    StResultData Result = ResultData.Dequeue();
+                    int k = LstTrialData.FindIndex(s => s.ChargerId == Result.ChargeId);
+                    int i = LstChargerInfo.FindIndex(s => s.ChargerId == Result.ChargeId);
+                    if (k < 0)
+                        continue;
+                    LstTrialData[k].BarCode = LstChargerInfo[i].BarCode;
+                    if (Result.LstData == null)
+                    {
+                        //continue;
+                        LstTrialData[k].TrialResult = EmTrialResult.Fail;
+                        testWorkParam.lstIDs.Remove(Result.ChargeId);
+                    }
+
+                    else
+                    {
+                        LstTrialData[k].Data1 = Result.LstData[0].ToString();
+                        string[] ReturnStrS = Result.LstData[0].ToString().Split(',');
+                        if (ReturnStrS.Length >= 5)
+                        {
+                            data = TrialItem.ItemName.Split('_')[0] + "|" + TrialItem.ItemName.Split('_')[1] + "|" + LOSETCurrent + "|" + HISETCurrent + "|" + ReturnStrS[3];
+                            LstTrialData[k].TrialValue = ReturnStrS[1];
+                            //惠州TB不判断安规测试仪返回的判定结果，只判断测量值
+                            string Customer = ConfigurationManager.AppSettings["Customer"].ToString().ToUpper();
+                            if (ReturnStrS[1].ToUpper().Contains("PASS") || (Customer != null && Customer.Contains("TB")))
+                            {
+                                LstTrialData[k].TrialResult = EmTrialResult.Pass;
+                                //   00.94 mA
+                                string str = ReturnStrS[3].Split(' ')[0];
+                                if (Convert.ToDouble(str) > Convert.ToDouble(HISETCurrent) ||
+                                    Convert.ToDouble(str) < Convert.ToDouble(LOSETCurrent))
+                                {
+                                    LstTrialData[k].TrialResult = EmTrialResult.Fail;
+                                }
+                                else
+                                {
+                                    LstTrialData[k].TrialResult = EmTrialResult.Pass;
+                                }
+                            }
+                            else
+                            {
+                                LstTrialData[k].TrialResult = EmTrialResult.Fail;
+                                testWorkParam.lstIDs.Remove(Result.ChargeId);
+                            }
+                        }
+                        else
+                        {
+                            LstTrialData[k].TrialResult = EmTrialResult.Fail;
+                            testWorkParam.lstIDs.Remove(Result.ChargeId);
+                        }
+                    }
+                    LstTrialData[k].TrialName = TrialItem.ItemName;
+                    LstTrialData[k].Data3 = TrialItem.TrialOrder.ToString();
+
+                    //界面展示的数据项格式
+                    //交流耐压值(kV)|HISET电流值(mA)|LOSET电流值(mA)| 测试时间(S)|斜坡时间(S)|ACW参考值(mA)|ARC电流值(mA)|测试频率(Hz)|测试结果
+                    //LstTrialData[k].ExtentData = Result.LstData[0].ToString().TrimEnd('\0');
+                    //string data = VoltageValue + "|" + HISETCurrent + "|" + LOSETCurrent + "|" +
+                    //                TestTime + "|" + RampTime + "|" + ACW_DCW + "|" + ARC;
+                    //if (TrialType == (int)EmTrialType.交流耐压_输入对地
+                    //    || TrialType == (int)EmTrialType.交流耐压_输出对地
+                    //    || TrialType == (int)EmTrialType.交流耐压_输入对输出)
+                    //{
+                    //    data += "|" + TestFreq;
+                    //}
+                    LstTrialData[k].PKID = LstChargerInfo[i].PKID;
+                    LstTrialData[k].ExtentData = data;
+                    LstTrialData[k].Data2 = data;
+                    LstTrialData[k].SaveTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    LstTrialData[k].SchemeName = TrialItem.SchemeName;
+                    LstTrialData[k].SchemeID = TrialItem.SchemeID;
+                    //LstTrialData[k].TrialCondition = "供电电压V=" + AllEquipStateData.DicACSource_StateData[LstTrialData[k].ChargerId].Volt + "|" +
+                    //  "供电电流A=" + AllEquipStateData.DicACSource_StateData[LstTrialData[k].ChargerId].Current + "|" +
+                    //  "供电频率=" + AllEquipStateData.DicACSource_StateData[LstTrialData[k].ChargerId].Freq;
+
+                    LstTrialData[k].TrialCondition = "供电电压V=0|供电电流A=0|供电频率=0";
+                    SendTrialDataToUI(LstTrialData[k]);
+                    //ChargerID,BarCode,TrialType,TrialName,ItemName,SchemeID,SchemeItemName,Data1,Data2,Data3,TrialResult,SaveTime
+                    SaveTrialData(LstTrialData[k]);
+                }
+            }
+            catch (Exception ex)
+            {
+                SendException(ex);
+            }
+        }
+
+    }
+}

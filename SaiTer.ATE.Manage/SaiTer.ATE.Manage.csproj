@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC2F0B29-1822-4CA9-8DA5-262CB1BAE2C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SaiTer.ATE.Manage</RootNamespace>
+    <AssemblyName>SaiTer.ATE.Manage</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\SaiTer.ATE.Exe\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NationalInstruments.Visa, Version=19.0.0.49152, Culture=neutral, PublicKeyToken=2eaa5af0834e221d" />
+    <Reference Include="nationalinstruments.visans, Version=9.0.40.156, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\MonitorProject宁波公牛\MonitorProject\Monitor\SDS2204X\nationalinstruments.visans.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NModbus4, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NModbus4.2.1.0\lib\net40\NModbus4.dll</HintPath>
+    </Reference>
+    <Reference Include="SaiTer.ATE.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SaiTer.ATE.Exe\Debug\SaiTer.ATE.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyManager.cs" />
+    <Compile Include="BusinessManage.cs" />
+    <Compile Include="ControlsManage.cs" />
+    <Compile Include="EquipMentsManage.cs" />
+    <Compile Include="SystemXmlInfo.cs" />
+    <Compile Include="XmlInfoAndAssembly.cs" />
+    <Compile Include="InterfaceOperate.cs" />
+    <Compile Include="PortManage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SaiTer.ATE.Business\SaiTer.ATE.Business.csproj">
+      <Project>{f326571b-be27-4038-b85d-8919fd4def51}</Project>
+      <Name>SaiTer.ATE.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.Controls\SaiTer.ATE.Controls.csproj">
+      <Project>{fc1ef210-91a5-450f-9d5a-b1a0b6b46047}</Project>
+      <Name>SaiTer.ATE.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.DataModel\SaiTer.ATE.DataModel.csproj">
+      <Project>{d5a2d6b4-9516-4d5e-9b0a-e68891f05d45}</Project>
+      <Name>SaiTer.ATE.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.EquipMent\SaiTer.ATE.EquipMent.csproj">
+      <Project>{F4718A5E-8722-43B9-9F1A-FF6C1A9F660F}</Project>
+      <Name>SaiTer.ATE.EquipMent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.IDAL\SaiTer.ATE.IDAL.csproj">
+      <Project>{3d7cc45f-a46e-4dc5-871a-03d35207bb4d}</Project>
+      <Name>SaiTer.ATE.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.InterFace\SaiTer.ATE.InterFace.csproj">
+      <Project>{211b5cc1-59d4-480e-9307-978486139b83}</Project>
+      <Name>SaiTer.ATE.InterFace</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.MES\SaiTer.ATE.MES.csproj">
+      <Project>{6baa0e7b-e957-402b-8723-7d5acb045bec}</Project>
+      <Name>SaiTer.ATE.MES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.PortManage\SaiTer.ATE.PortManage.csproj">
+      <Project>{fa8893e7-0d9c-4a84-aff5-d7b24eda19d3}</Project>
+      <Name>SaiTer.ATE.PortManage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,13 @@
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.EquipMent.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.EquipMent.pdb
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.EquipMent\obj\Debug\SaiTer.ATE.EquipMent.csproj.AssemblyReference.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.EquipMent\obj\Debug\SaiTer.ATE.EquipMent.csproj.CoreCompileInputs.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.EquipMent\obj\Debug\SaiTer.ATE.EquipMent.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.EquipMent\obj\Debug\SaiTer.ATE.EquipMent.pdb
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.EquipMent\obj\Debug\SaiTer.ATE.EquipMent.WaveRecorder.FrmWaveRecoder.resources
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.EquipMent\obj\Debug\SaiTer.ATE.EquipMent.csproj.GenerateResource.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.EquipMent\obj\Debug\SaiTer.A.13DD70B0.Up2Date
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\x86\libHarfBuzzSharp.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\x64\libHarfBuzzSharp.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\arm64\libHarfBuzzSharp.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\libHarfBuzzSharp.dylib

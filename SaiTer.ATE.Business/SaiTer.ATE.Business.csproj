@@ -1,0 +1,769 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F326571B-BE27-4038-B85D-8919FD4DEF51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SaiTer.ATE.Business</RootNamespace>
+    <AssemblyName>SaiTer.ATE.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\SaiTer.ATE.Exe\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SaiTer.ATE.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SaiTer.ATE.Exe\Debug\SaiTer.ATE.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AC\ChargingCutOffLoad.cs" />
+    <Compile Include="AC\DiodeShortCircuit_AC.cs" />
+    <Compile Include="AC\EmergencyStop_AC.cs" />
+    <Compile Include="AC\ErrorPayment_GB_AC.cs" />
+    <Compile Include="AC\EU_AC\ChargingConnectionControlTiming_EU_AC.cs" />
+    <Compile Include="AC\EU_AC\PPDisConnection_EU_AC.cs" />
+    <Compile Include="AC\EU_AC\RcResistance_EU_AC.cs" />
+    <Compile Include="AC\GB_AC\CCDisConnection_GB_AC.cs" />
+    <Compile Include="AC\GB_AC\ChargingConnectionControlTiming_GB_AC.cs" />
+    <Compile Include="AC\GB_AC\CPDisConnection_RT_AC.cs" />
+    <Compile Include="AC\GB_AC\CPGrounding_RT_AC.cs" />
+    <Compile Include="AC\GB_AC\CPOverVoltage_AKR.cs" />
+    <Compile Include="AC\GB_AC\CPVoltageLimit.cs" />
+    <Compile Include="AC\GB_AC\InputFunctional_GB_AC.cs" />
+    <Compile Include="AC\NormalEndCharge_AC_RT.cs" />
+    <Compile Include="AC\OutputShortCircuitTest_AC_RT.cs" />
+    <Compile Include="AC\TBAuto\CZ_ComprehensiveTest_TBAuto.cs" />
+    <Compile Include="AC\TBAuto\CPDisConnection_TBAuto.cs" />
+    <Compile Include="AC\TBAuto\EmergencyStop_TBAuto.cs" />
+    <Compile Include="AC\TBAuto\InputVoltageError_TBAuto.cs" />
+    <Compile Include="AC\TBAuto\LeakageCurrentTest_TBAuto.cs" />
+    <Compile Include="AC\TBAuto\LNReverse_TBAuto.cs" />
+    <Compile Include="AC\TBAuto\NormalEndCharge_TBAuto.cs" />
+    <Compile Include="AC\TBAuto\OutputOverCurrent_TBAuto.cs" />
+    <Compile Include="AC\TBAuto\RcResistance_GB_TBAuto.cs" />
+    <Compile Include="AC\TBAuto\StartAndChargingPhase_GB_TBAuto.cs" />
+    <Compile Include="AC\GB_AC\ResistanceSimulate_HK.cs" />
+    <Compile Include="AC\GB_AC\ErroPayment_GB_AC.cs" />
+    <Compile Include="AC\OutputShortCircuitTest_AC.cs" />
+    <Compile Include="AC\TB\CPDisConnection_TB.cs" />
+    <Compile Include="AC\TB\CustomTest_TB.cs" />
+    <Compile Include="AC\TB\DontChageTest_TB.cs" />
+    <Compile Include="AC\TB\EmergencyStop_TB.cs" />
+    <Compile Include="AC\TB\InputVoltageError_TB.cs" />
+    <Compile Include="AC\TB\LeakageCurrentTest_TB.cs" />
+    <Compile Include="AC\TB\LNReverse_TB.cs" />
+    <Compile Include="AC\TB\NormalEndCharge_TB.cs" />
+    <Compile Include="AC\TB\OutputOverCurrent_TB.cs" />
+    <Compile Include="AC\TB\RcResistance_GB_TB.cs" />
+    <Compile Include="AC\TB\ShowTipTest_TB.cs" />
+    <Compile Include="AC\TB\StartAndChargingPhase_GB_TB.cs" />
+    <Compile Include="AC\UA_AC\CPVoltage_UA_AC.cs" />
+    <Compile Include="AC\UA_AC\CSSignal_UA_AC.cs" />
+    <Compile Include="AC\UA_AC\OutputOverCurrent_RD.cs" />
+    <Compile Include="AC\UA_AC\PowerInputLost_tmp.cs" />
+    <Compile Include="AC\UA_AC\RcResistance_UA_AC.cs" />
+    <Compile Include="AplusSoft\AplusSoft.cs" />
+    <Compile Include="AplusSoft\JP_DC_Soft.cs" />
+    <Compile Include="AplusSoft\ProtocolConformance.cs" />
+    <Compile Include="AplusSoft\ProtocolConformance_JP_DC.cs" />
+    <Compile Include="CCS1\RT\AC\CCS1_RT_AC_CPDutyCycle.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_ChargingConnectControlSeq.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_ChargingStage.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_CommunicationOutage.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_ConnectionConfirmation.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_CPDisConnection.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_CurrentMeasureError.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_CurrentRegulationDC.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_CurrentRipple.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_DisplayFunction.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_IEC61851-23_101.2.1.5_CurrentRippleTest.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_IEC61851-23_101.2.1.6_VoltageRippleTest.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_EmergencyStopFunctional.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_ErrorIndication.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_ErrorWork.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_InsulationFault.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_MaxRatedOPower.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_NormalEndCharging.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_OutputCurrentAdjustTime.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_OutputCurrentStopRate.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_GeneralRequirementsTest.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_InsulationBeforeCharging.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_OutputCurrentControlError.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_OutputOvervoltage.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_OutputVoltageControlError.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_OverTemperature.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_PoPUnLoad.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_ProtectiveGroundingContinuity.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_ReadyToCharge.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_SelfInspectionStage.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_ShortCircuitTest.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_VehiclePlugLock.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_VoltageCheckInitialization.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_VoltageMeasureError.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_VoltageRegulationDC.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_PT_DC_VoltageRipple.cs" />
+    <Compile Include="CCS2\PT\DC\CCS2_RT_DC_EfficiencyTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_4_GeneralRequirementsTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_11.7_CableManagementAndStorageMeansForCablesAssemblies.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_12.3_ClearancesAndCreepageDistancesTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_5.1.1_InputPowerCharacteristicsTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_5.1.2_OutputPowerCharacteristicsTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_5.2_NormalEnvironmentalConditionsTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_5.3_SpecialEnvironmentalConditionsTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_5.4_AccessAccordingTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_5.5_MountingMethodTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_5.6_ElectricShockProtectionTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_5.7_ChargingModesTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_6.2_ChargingMode3Test.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_6.3.1.2_ProtectiveConductorContinuityTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_6.3.1.3_ProperlyConnectedTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_6.3.1.4_PowerSuoolyEnergizationTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_6.3.1.5_De-energizationEVPowerSupplyTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_6.3.1.6_MaximumAllowableCurrentTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_6.3.2.1_ModesOptionalFunctionsGeneralTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_6.3.2.3_EVPlugDisconnectionTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_8.1_ProtectionAgainstDegressTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_8.2.1_EVPlugConnectedDisconnectionTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_8.2.2_ConnectedEVLossVoltTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_8.3_FaultProtectionTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_8.4_ProtectiveConductorTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_A4.4_FrequencyAndGeneratorVoltageTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_A4.5_DutyCycleTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_A4.6_ImpulseWaveformTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_A4.7.2_TypicalControlPilotCircuitTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_A4.7.4_EquipmentThatSupportGridTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_A4.8_ProtectiveConductorInterruptionTest.cs" />
+    <Compile Include="CCS2\RT\AC\CCS2_RT_AC_IEC61851-1_A4.9_VoltageShortCircuitValuesTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-1_13.2_CableAssemblyOverloadProtectionTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-1_6.3.1.4_PowerSuoolyEnergization.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-1_8.2.1_EVPlugConnectedDisconnectionTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-1_6.3.1.2_ProtectiveConductorContinuityTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-1_6.3.1.3_ProperlyConnectedTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-1_6.3.1.4_PowerSuoolyEnergizationTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-1_6.3.1.5_De-energizationEVPowerSupplyTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-1_6.3.1.6_MaximumAllowableCurrentTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-1_8.2.2_ConnectedEVLossVoltTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-1_8.3_FaultProtectionTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-1_A4.4_FrequencyAndGeneratorVoltageTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-1_A4.5_DutyCycleTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-1_A4.6_ImpulseWaveformTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_101.2.1.1_RatedAndMaximumOutputPowerTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_101.2.1.2.1_OutputCurrentRegulationCCC.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_101.2.1.2.2_OutputVoltageRegulationCVC.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_101.2.1.3_ControlDelayChargingCurrentCCC.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_101.2.1.4_ChargingCurrentDescendingRate.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_101.2.1.7_LoadDumpTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_6.4.3.101_EVDCSupply.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_6.4.3.102_MeasuringCurrentAndVoltage.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_6.4.3.105_CompatibilityAssessment.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_6.4.3.106_InsulationBeforeCharging.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_6.4.3.107_BatteryOvervoltageProtection.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_6.4.3.109_ControlCircuitSupplyIntegrity.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_6.4.3.110_ShortCircuitBeforeCharging.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_6.4.3.113_AgainstTemporaryOvervoltageProtection.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_6.4.3.114_EmergencyShutdown.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_6.4.3.2_ProtectiveConductorContinuityChecking.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_6.4.3.4_SystemDe-energizationTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_CC.3.2_NormalStartUp.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_CC.3.3_NormalShutdown.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_CC.3.4_DCSupplyInitiatedEmergencyShutdown.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_CC.3.5_EVInitiatedEmergencyShutdown.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_CC.4.1_ITSystemRequirementsTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_CC.4.4_CPLostShutdownTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_CC.4.6_InitializationVoltageCheck.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_CC.5.1_PreChargingTest.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_CC.5.2_WakeUpOfDCSupply.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_CC.6.1_TurnOnInrushCurrent.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_CC.6.1_TurnOnInrushCurrentDL.cs" />
+    <Compile Include="CCS2\RT\DC\CCS2_RT_DC_IEC61851-23_CC.6.4_OutputCurrentRegulation.cs" />
+    <Compile Include="CHAdeMO\PT\DC\CHAdeMO_PT_DC_BatteryCompatibility.cs" />
+    <Compile Include="CHAdeMO\PT\DC\CHAdeMO_PT_DC_ChargingEndTest.cs" />
+    <Compile Include="CHAdeMO\PT\DC\CHAdeMO_PT_DC_ChargingModeAndConnectionMethod.cs" />
+    <Compile Include="CHAdeMO\PT\DC\CHAdeMO_PT_DC_ChargingPhase.cs" />
+    <Compile Include="CHAdeMO\PT\DC\CHAdeMO_PT_DC_ChargingTiming.cs" />
+    <Compile Include="CHAdeMO\PT\DC\CHAdeMO_PT_DC_CommunicationOutage.cs" />
+    <Compile Include="CHAdeMO\PT\DC\CHAdeMO_PT_DC_ConnectionConfirm.cs" />
+    <Compile Include="CHAdeMO\PT\DC\CHAdeMO_PT_DC_OtherChargingFaults.cs" />
+    <Compile Include="CHAdeMO\PT\DC\CHAdeMO_PT_DC_OutputOverVoltage.cs" />
+    <Compile Include="CHAdeMO\PT\DC\CHAdeMO_PT_DC_SelfCheckPhase.cs" />
+    <Compile Include="CHAdeMO\PT\DC\CHAdeMO_PT_DC_VehicleInterfaceDisconnected.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="CCS1\RT\AC\CCS1_RT_AC_SAEJ1772-2017_E.3_ChargingConnectionControlTiming.cs" />
+    <Compile Include="CommAppConfigXMLOperation.cs" />
+    <Compile Include="Customization\JS\CZ_JS_DielectricStrength_Manual.cs" />
+    <Compile Include="Customization\JS\CZ_JS_EarthingConductor_Manual.cs" />
+    <Compile Include="Customization\JS\CZ_JS_InsulationResistance_Manual.cs" />
+    <Compile Include="Customization\JS\CZ_JS_LeakageCurrent_Manual.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_ACPhaseSequenceProtection.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_ACThreePhaseImbalanceProtection.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_ActivePowerControl.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_CurrentHarmonic.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_DCComponent.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_FrequencyAdaptabilityCheck.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_ACFrequencyAnomalyProtection.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_FrequencyDeviation.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_PowerFactorCheck.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_VoltageAdaptabilityCheck.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_ACVoltageAnomalyProtection.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_VoltageDeviation.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_VoltageHarmonic.cs" />
+    <Compile Include="Customization\TB\CZ_TB_CurrentLimitCharacteristic.cs" />
+    <Compile Include="Customization\TB\CZ_TB_FailureCheck.cs" />
+    <Compile Include="Customization\TB\CZ_TB_GeneralInspection.cs" />
+    <Compile Include="Customization\TB\CZ_TB_InputVoltageError.cs" />
+    <Compile Include="Customization\TB\CZ_TB_InputVoltageTest.cs" />
+    <Compile Include="Customization\TB\CZ_TB_InsulationFaultCheckEU.cs" />
+    <Compile Include="Customization\TB\CZ_TB_LampSignal.cs" />
+    <Compile Include="Customization\TB\CZ_TB_OutputCurrentError.cs" />
+    <Compile Include="Customization\TB\CZ_TB_OutputVoltageError.cs" />
+    <Compile Include="Customization\TB\CZ_TB_PrecisionSteadyCurrent.cs" />
+    <Compile Include="Customization\TB\CZ_TB_PrecisionSteadyVoltage.cs" />
+    <Compile Include="Customization\TB\CZ_TB_VoltageLimitCharacteristic.cs" />
+    <Compile Include="Customization\TPK\TPK_AgingTest.cs" />
+    <Compile Include="Customization\TPK\TPK_AuxiliaryPower.cs" />
+    <Compile Include="Customization\TPK\TPK_CC1DisConnection.cs" />
+    <Compile Include="Customization\TPK\TPK_ConnectionException.cs" />
+    <Compile Include="Customization\TPK\TPK_DoubleCharging.cs" />
+    <Compile Include="Customization\TPK\TPK_EmergencyStop.cs" />
+    <Compile Include="Customization\TPK\TPK_ErrorPayment.cs" />
+    <Compile Include="Customization\TPK\TPK_ErrorTest.cs" />
+    <Compile Include="Customization\TPK\TPK_EVPlugLockFunction.cs" />
+    <Compile Include="Customization\TPK\TPK_Fan.cs" />
+    <Compile Include="Customization\TPK\TPK_FaultTesting.cs" />
+    <Compile Include="Customization\TPK\TPK_InsulationDetection.cs" />
+    <Compile Include="Customization\TPK\TPK_LED_GB_DC.cs" />
+    <Compile Include="Customization\TPK\TPK_NFC_GB_DC.cs" />
+    <Compile Include="Customization\TPK\TPK_PowerAllocation.cs" />
+    <Compile Include="Customization\TPK\TPK_SingleCharging.cs" />
+    <Compile Include="Customization\TPK\TPK_SwipingCard.cs" />
+    <Compile Include="Customization\TPK\TPK_TemperatureDetection.cs" />
+    <Compile Include="DataAnalysis_WaveRecoder.cs" />
+    <Compile Include="CCS1\RT\AC\CCS1_RT_AC_S2ControlTesting.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_ChargingAndDischarging.cs" />
+    <Compile Include="Customization\NTGX\CN\CZ_NTGX_CN_OnOffGrid.cs" />
+    <Compile Include="Customization\SZHY\CZ_SXHY_AgingTest_DCEA.cs" />
+    <Compile Include="Customization\SZHY\CZ_SXHY_AgingTest_DCGB.cs" />
+    <Compile Include="Customization\SZHY\CZ_SXHY_AgingTest_DCUA.cs" />
+    <Compile Include="DC\ErrorWork.cs" />
+    <Compile Include="DC\InsulationDetection_GB_DC_CJB.cs" />
+    <Compile Include="DC\OutputShortCircuitTest.cs" />
+    <Compile Include="DC\ProductionT\AuxiliaryPower_Ctrl.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\ChargingCommunicationTest_EU_DC.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\ChargingConnectionControlTiming_EU_DC.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\VehicleSDisConnected.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\VoltageMeasureEU.cs" />
+    <Compile Include="DC\ResearchT\AntiBackflowTest.cs" />
+    <Compile Include="DC\ResearchT\BatteryDoubleProtection.cs" />
+    <Compile Include="DC\ResearchT\ChargingReadyTest_Single.cs" />
+    <Compile Include="DC\ResearchT\ChargingReadyTest_Total.cs" />
+    <Compile Include="DC\ResearchT\CommunicationFunctionTest.cs" />
+    <Compile Include="DC\ResearchT\CurrentLimitCharacteristicTest.cs" />
+    <Compile Include="DC\ResearchT\CurrentLimitCharacteristic_CJB.cs" />
+    <Compile Include="DC\ResearchT\DoorOpenProtectionTest.cs" />
+    <Compile Include="DC\ResearchT\EfficiencyAndPowerFactor_CJB.cs" />
+    <Compile Include="DC\ResearchT\EfficiencyTest.cs" />
+    <Compile Include="DC\ResearchT\EfficiencyTest_CW.cs" />
+    <Compile Include="DC\ResearchT\EmergencyStopFeature.cs" />
+    <Compile Include="DC\ResearchT\GB34657.ManualInspection.cs" />
+    <Compile Include="DC\ResearchT\NormalChargingEndTest_EVSEStop.cs" />
+    <Compile Include="DC\ResearchT\NormalChargingEndTest_EVStop.cs" />
+    <Compile Include="DC\ResearchT\OutputCResponseTime_CJB.cs" />
+    <Compile Include="DC\ResearchT\OutputCStopRate_CJB.cs" />
+    <Compile Include="DC\ResearchT\PowerControlTest_CJB.cs" />
+    <Compile Include="DC\ResearchT\SelfCheckPhaseTest_KS.cs" />
+    <Compile Include="DC\ResearchT\StartOutputOvershootTest.cs" />
+    <Compile Include="GB\GC\GB_GC_DC_PowerDistributeDoubleCharger.cs" />
+    <Compile Include="GB\GC\GB_GC_DC_TakeTurnsChargingDobleCharger.cs" />
+    <Compile Include="GB\PT\AC\GB_PT_AC_CCDisConnection.cs" />
+    <Compile Include="GB\PT\AC\GB_PT_AC_ConnectionConfirmation.cs" />
+    <Compile Include="GB\PT\AC\GB_PT_AC_ReadyForCharging.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_AgingTest.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.10.1_InsulationResistance_Manual.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.10.2_DielectricStrength_Manual.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.3.3_InsulationDetection.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.7_ElectricalIsolation.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.8.1_ProtectionAgainstDirectContact.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.9_ElectricalAndCreepage.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.6_ChargerConnectorAndCable.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_BatteryVoltCheck_XJ_QB.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_Efficiency_XJ_QB.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_GBT34657.1-2017_6.3.2.2_SelfCheckPhaseTest_WaveRecoder.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_GBT34657.1-2017_6.3.2.2_SelfCheckPhaseTest.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_GBT34657.1-2017_6.3.2.3_ChargingReady.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_GBT34657.1-2017_6.3.2.3_ChargingReady_WaveRecoder.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_GBT34657.1-2017_6.3.2.3_NormalChargingEndTest.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_GBT34657.1-2017_6.3.2.3_NormalChargingEndTest_WaveRecoder.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_GBT34657.1-2017_6.3.2.4_ChargingStageTest.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_GBT34657.1-2017_6.4.2.1_ConnectionConfirm.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_GeneralManual.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_HarmonicsCurrent_XJ_QB.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_InputOpenPhase_XJ_QB.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.10.1_InsulationResistance.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.10.2_DielectricStrength.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.11_EarthingConductor.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.12.20_PowerFactor.cs" />
+    <Compile Include="DC\ResearchT\ManualInspection.cs" />
+    <Compile Include="DC\ResearchT\MaximumConstantPower_CW.cs" />
+    <Compile Include="DC\ResearchT\OtherChargingErrorTest.cs" />
+    <Compile Include="DC\ResearchT\OutputCurrentSetErrorTest.cs" />
+    <Compile Include="DC\ResearchT\OutputVoltageSetErrorTest.cs" />
+    <Compile Include="DC\ResearchT\PowerControlTest_CW.cs" />
+    <Compile Include="DC\ResearchT\PowerFactorTest.cs" />
+    <Compile Include="DC\ResearchT\ChargingReadyTest.cs" />
+    <Compile Include="DC\ResearchT\ChargingStageTest.cs" />
+    <Compile Include="DC\ResearchT\ControlBMSVoltageLimit.cs" />
+    <Compile Include="DC\ResearchT\ImpulseWithstandcsTest.cs" />
+    <Compile Include="DC\ResearchT\NormalChargingEndTest.cs" />
+    <Compile Include="DC\ResearchT\OutputCurrentControlError.cs" />
+    <Compile Include="DC\ResearchT\OutputCurrentMeasure.cs" />
+    <Compile Include="DC\ResearchT\OutputVoltageControlError.cs" />
+    <Compile Include="DC\ResearchT\OutputVoltageExceeds.cs" />
+    <Compile Include="DC\ResearchT\AntiBackflow.cs" />
+    <Compile Include="DC\ResearchT\OutputVoltageMeasure.cs" />
+    <Compile Include="DC\ResearchT\PEDisConnectionTest.cs" />
+    <Compile Include="DC\ResearchT\PowerFactorTest_CW.cs" />
+    <Compile Include="DC\ResearchT\RippleCurrentTest.cs" />
+    <Compile Include="DC\ResearchT\RippleVoltageTest.cs" />
+    <Compile Include="DC\ResearchT\S2DisconnectTest.cs" />
+    <Compile Include="DC\ResearchT\SelfCheckPhaseTest.cs" />
+    <Compile Include="DC\ResearchT\ShowFunctionTest.cs" />
+    <Compile Include="DC\ResearchT\StartOutputOvershoot.cs" />
+    <Compile Include="DC\ResearchT\VehicleDisconnection.cs" />
+    <Compile Include="DC\ResearchT\PreCharging.cs" />
+    <Compile Include="DC\ResearchT\EmergencyStopResearch.cs" />
+    <Compile Include="DC\ResearchT\OutputCurrentMeasurement.cs" />
+    <Compile Include="DC\ResearchT\MaximumConstantPower.cs" />
+    <Compile Include="DC\ResearchT\BatteryVoltageExceed.cs" />
+    <Compile Include="DC\ResearchT\InsulationDetectionResearch.cs" />
+    <Compile Include="DC\ResearchT\ChargingDemandGreater.cs" />
+    <Compile Include="DC\ResearchT\ConnectionCTest.cs" />
+    <Compile Include="DC\ResearchT\MeasurementUpdate.cs" />
+    <Compile Include="DC\ResearchT\OutputCStopRate.cs" />
+    <Compile Include="DC\ResearchT\SelfCheckPhase_ErrorVolt.cs" />
+    <Compile Include="DC\ResearchT\ChargingConnectionControlTiming.cs" />
+    <Compile Include="DC\ResearchT\OutputImpulseCurrent.cs" />
+    <Compile Include="DC\ResearchT\CommunicationOutage_R.cs" />
+    <Compile Include="DC\ResearchT\BatteryVoltNotMatchMessage.cs" />
+    <Compile Include="DC\ResearchT\VoltageLimitCharacteristicTest.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.12.10_OutputVoltSetError.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.12.11_LimitingVoltageCharacter.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.12.12_LimitingCurrentCharacter.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.12.19_EfficiencyTest.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.12.4_AuxiliaryPower.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.12.5_SteadyCurrentPrecision.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.12.6_SteadyVoltagePrecision.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.12.7_VoltageRippleFactor.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.12.8_CurrentRippleFactor.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.12.9_OutputCurrentSetError.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.15.1_ChargingControlState.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.15.2_ChargingConnectionControlTiming.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.15.2_ChargingConnectionControlTiming_WaveRecoder.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.15.4_CommunicationOutage.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.15.4_CommunicationOutage_WaveRecoder.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.15.5_ProtectiveGroundingContinuance.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.15.5_ProtectiveGroundingContinuance_WaveRecoder.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.15.6_CC1DisConnection.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.15.6_CC1DisConnection_WaveRecoder.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.3.10_EmergencyStopFunctional.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.3.10_EmergencyStopFunctional_WaveRecoder.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.3.1_ChargingControlFunction.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.2_GeneralInspection.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.3.5_EVPlugLockFunction.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.3.6_PreCharging_WaveRecoder.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.3.8_InputFunctional.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.3.7_ShowFunctionTest.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.4.11_ContactorAdhesion.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.4.1_InputOverVoltProtection.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.4.2_InputUnderVoltProtection.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.4.3_OutputOverVoltProtection.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.4.3_OutputOverVoltProtection_WaveRecoder.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.4.5_OverTemperatureProtection.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.4.6_OpenDoorProtection.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.4.7_ActivateEmergencyStop.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.4.7_ActivateEmergencyStop_WaveRecoder.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.4.8_InputCurrentOvershoot.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.4.8_InputCurrentOvershoot_WaveRecoder.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.4.9_BatteryReverseConnect.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.5_ChargerModeAndConnectWay.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.8.2_PowerInputLost.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_NBT33008.1-2018_5.8.2_PowerInputLost_WaveRecoder.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_OutputImpulseCurrent_WaveRecoder_XJ_QB.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_OutputOverCurrent_XJ_QB.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_PowerFactor_XJ_QB.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_RippleFactor_Oscilloscope_XJ_QB.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_SlowStart_WaveRecoder_XJ_QB.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_StandbyPowerConsumption_XJ_QB.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_SteadyCurrentAccuracy_XJ_QB.cs" />
+    <Compile Include="GB\PT\DC\GB_PT_DC_SteadyVoltAccuracy_XJ_QB.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.2.1_ConnectionConfirm.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.2.2_SelfCheckPhaseTest.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.2.3_ChargingReadyTestTotal_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.2.4_ChargingStageTest_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.2.5_NormalChargingEndTest_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.3_ChargingConnectionControlTiming_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.4.10_OutputOverVoltage_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.4.11_OutputOverCurrent_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.4.12_OtherFaults_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.4.1_DCCircuitAbnormalityProtection_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.4.2_InsulationDetection_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.4.3_VehicleCircuitAbnormalityProtection_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.4.4_CommunicationInterruption_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.4.5_ELockAbnormality.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.4.6_PauseAbnormality.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.4.7_SwitchS_Disconnected_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.4.8_VehicleInterfaceDisconnected_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.4.9_ProtectiveGroundingLoss_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.5.1_OutputVoltageControlError_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.5.2_OutputCurrentControlError_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.5.3_OutputCResponseTime_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.5.4_CurrentStopRate_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.5.5_InrushCurrent_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.5.6_PauseChargingAndResume_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.5.7_LoadDump_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB34657.1-2025\GB_RT_DC_GBT34657.1-2025_6.3.2.6.1_ControlPilotVoltageLimit_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT18487.1-2023_B.4.3_ChargerDevSelfCheck.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT18487.1-2023_B.4.5_ChargingPause.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT18487.1-2023_B.4.7.10_LoadDumpTest.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT18487.1-2023_B.4.7.4_CommunicationOutage.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT18487.1-2023_B.4.7.6_VehicleVoltExceedsMax.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT18487.1-2023_B.4.7.7_ChargingLoopFault.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT18487.1-2023_B.4.7.9_LockerAbnormal.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018 5.4.7_ActivateEmergencyStop.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018 5.15.6_CC1DisConnection.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT34657.1-2017_6.2_ChargingInterfaceInteroperability.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT34657.1-2017_6.3.4.5_InsulationDetection_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT34657.1-2017_6.3.5.4_OutputCStopRate_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.12.10_OutputVoltageSetError_XJ.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.12.19_EfficiencyTest_XJ.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.12.20_PowerFactorTest_XJ.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.12.2_MaximumConstantPower_XJ.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.12.5_PrecisionSteadyCurrent_XJ.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.12.6_PrecisionSteadyVoltage_XJ.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.12.7_VoltageRippleFactor_Oscilloscope_XJ.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.12.8_CurrentRippleFactor_Oscilloscope.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT34657.1-2017_6.3.2.3_ChargingReadyTestTotal_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT34657.1-2017_6.3.2.4_ChargingStageTest.cs" />
+    <Compile Include="GB\RT\AC\GB_RT_AC_GBT34657.1-2017_6.4.2.3_StartAndChargingPhase.cs" />
+    <Compile Include="GB\RT\AC\GB_RT_AC_GBT34657.1-2017_6.4.4.1_CCDisConnection.cs" />
+    <Compile Include="GB\RT\AC\GB_RT_AC_GBT34657.1-2017_6.4.3_ChargingConnectionControlTiming.cs" />
+    <Compile Include="GB\RT\AC\GB_RT_AC_GBT34657.1-2017_6.4.2.2_ReadyForCharging.cs" />
+    <Compile Include="GB\RT\AC\GB_RT_AC_GBT34657.1-2017_6.4.4.6_S2ControlTesting.cs" />
+    <Compile Include="GB\RT\AC\GB_RT_AC_GBT34657.1-2017_6.4.5.1_CPOverVoltage.cs" />
+    <Compile Include="GB\RT\AC\GB_RT_AC_NBT33008.2-2018_5.3.5_InputFunctional.cs" />
+    <Compile Include="GB\RT\AC\GB_RT_AC_NBT33008.2-2018_5.3.2_ChargerConnectorCheck.cs" />
+    <Compile Include="GB\RT\AC\GB_RT_AC_NBT33008.2-2018_5.4.2_OverTempProtection.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT34657.1-2017_6.3.2.2_SelfCheckPhaseTest_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT34657.1-2017_6.3.2.3_NormalChargingEndTest_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT34657.1-2017_6.3.4.2_S2DisconnectTest_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT34657.1-2017_6.3.4.3_VehicleInterfaceDisconnection_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT34657.1-2017_6.3.4.7_OtherChargingFaultsTest_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT34657.1-2017_6.3.6.1_ControlBMSVoltageLimit_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT34657.1-2017_6.4.2.1_ConnectionConfirm_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_GBT44263-2024_8.2.7_OutputVoltageOverProteciton.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.12.18_MeasurementUpdate_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.12.13_OutputCResponseTime_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.12.7_VoltageRippleFactor_Oscilloscope.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.12.9_OutputCurrentSetError_XJ.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.15.10_BatteryDoubleProtection_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.15.11_VehicleMaxVoltageMismatch_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.15.2_ChargingConnectionControlTiming_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.15.4_CommunicationOutage_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.15.5_ProtectiveGroundingContinuance_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.15.6_CC1DisConnection_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.15.7_OutputImpulseCurrent_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.3.10_EmergencyStopFunctional.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.3.10_EmergencyStopFunctional_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.3.6_PreCharging_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.4.4_OutputShortCircuitTest_ShortCirDev.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018_5.4.7_ActivateEmergencyStop_WaveRecoder.cs" />
+    <Compile Include="GB\RT\DC\GB_RT_DC_NBT33008.1-2018 5.3.6_PreCharging.cs" />
+    <Compile Include="Oscillograph.cs" />
+    <Compile Include="DC\AgingTest_DC.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\AcSourceGradeEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\ConnectionConfirmationEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\CPDisConnectionEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\CrashStopEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\CurrentMeasureEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\CurrentRegulationDCEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\CurrentRippleEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\DisplayFunctionEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\EfficiencyPowerFactorEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\EntranceGuardEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\InputVoltageErrorEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\InsulationFaultALLEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\InsulationFaultEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\MaximumOutputCurrentEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\MaxRatedOPowerEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\NormalEndChargingEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\OutputOvervoltageCarEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\OverTemperatureEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\PEDisConnectionEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\PoPUnLoadEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\PrechargeEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\ProtectiveGroundingContinuityEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\ReadyToChargeEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\SelfInspectionStageEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\SSwitchOFFEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\StandbyPowerEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\StartAndChargingPhaseEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\VoltageRegulationDCEU.cs" />
+    <Compile Include="DC\ProductionT\EU_DC\VoltageRippleEU.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\AuxiliaryPower_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\BatteryReverseConnect_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\CC1DisConnection_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\ChargingConnectControlSeq_GB_DC.cs" />
+    <Compile Include="DC\ChargingControl_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\CommunicationOutage_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\ConformanceTest.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\ConnectConfirm.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\CorrectInputCurrentOvershoot_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\CurrentLimitCharacteristic_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\EmergencyStop_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\ErrorClockIndication_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\ErrorIndication _GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\ErrorPayment_GB_DC.cs" />
+    <Compile Include="DC\ErrorWork_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\ImpulseWithstandcs.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\InputCurrentOvershoot_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\InputCurrentOvershoot_GB_DC222.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\InputFunctional_GB_DC.cs" />
+    <Compile Include="DC\InsulationDetection_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\MaxConstantPower_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\OutputCurrentSetError.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\OutputVoltageErr_FeedBackLoad.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\OutputVoltageSetError.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\OverTempProtection_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\PEDisConnection_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\PowerControl_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\PowerFactor_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\PowerFactor_GB_DCR.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\PowerInputLost_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\Precharge_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\PrecisionSteadyCurrent_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\PrecisionSteadyVoltage_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\RippleCurrent_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\RippleVoltage_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\VehiclePlugLock_GB_DC.cs" />
+    <Compile Include="DC\ProductionT\GB_DC\VoltageLimitCharacteristic_GB_DC.cs" />
+    <Compile Include="DC\ResearchT\CircuitShortFunction.cs" />
+    <Compile Include="DC\ResearchT\CurrentLimitCharacteristic.cs" />
+    <Compile Include="DC\ResearchT\OutputCResponseTime.cs" />
+    <Compile Include="DC\ResearchT\SteadyCurrent.cs" />
+    <Compile Include="DC\ResearchT\SteadyVoltage.cs" />
+    <Compile Include="DC\ResearchT\VoltageLimitCharacteristic.cs" />
+    <Compile Include="DC\ResearchT\VoltageRpple.cs" />
+    <Compile Include="ProtocolConformanceUtil.cs" />
+    <Compile Include="ProtocolSummary\ConsistSummaryBase.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN1001to03.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN1004.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN2003to04.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN2001to02.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN2005.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN2006.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN3003.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN3005_07.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN3006_08.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN3009to10.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN4001to04.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN2007to08.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN2009.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN2010.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN3001.cs" />
+    <Compile Include="ProtocolSummary\Consist_DN3002_04.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP1001.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP1002.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP1003.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP2001.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP2002.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP2003.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP3001.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP3002.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP3003.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP3004.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP3005.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP3006.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP3007.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP4001.cs" />
+    <Compile Include="ProtocolSummary\Consist_DP4002.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_AntiElectricShockMeasures.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_ChargerCommunicationCompatibility.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_ChargerConnectorCompatibility.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_ChargerControlCompatibility.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_ChargerControlCompatibility_WaveRecoder.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_ConnectionDevice.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_GeneralManual.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_GroundingContinuity.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_GroundingContinuity_WaveRecoder.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_LockingFunction.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.3.3_AuxiliaryPowerTest.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.5.6_RippleFactor_Oscilloscope.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.6.1.10_OutputImpulseCurrent_WaveRecoder.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.6.1.11_SlowStart_WaveRecoder.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.6.1.3_OutputOverCurrent.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.3.3_AuxiliaryPower.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.6.1.1_InputOpenPhase.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.6.1.14_BatteryVoltCheck.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.5.11_HarmonicsCurrent.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.6.1.13_BatteryReverseConnect.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.6.1.10_OutputImpulseCurrent.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.6.1.7_EmergencyStopFunctional_WaveRecoder.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.6.1.9_InputImpulseCurrent.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.6.1.7_EmergencyStopFunctional.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.6.1.2_OutputOverVolt.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.6.1.1_InputUnderVolt.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.6.1.1_InputOverVolt.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.5.9_PowerFactor.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.5.9_Efficiency.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.4.3_CommunicationFunction.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.4.1_ChargerSetWay.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.4.4.1_ShowFunction.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.4.4.2_InputFunction.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.4.6_MeasureFunction.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.4.7_PayFunction.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.5.2_OutputVoltError.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.5.3_OutputCurrentError.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.5.7.2_CurrentLimitCharacteristic.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_GeneralInspection.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.5.4_SteadyVoltAccuracy.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.5.5_SteadyCurrentAccuracy.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.5.6_RippleFactor.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.5.7.1_VoltLimitCharacteristic.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.5.13_StandbyPowerConsumption.cs" />
+    <Compile Include="QB\RT\DC\QB_RT_DC_QCSG1211013-2016_4.6.1.11_SlowStart.cs" />
+    <Compile Include="Safety\InsulationResistanceContinuous.cs" />
+    <Compile Include="Safety\HighVoltageContinuous.cs" />
+    <Compile Include="Safety\Safety_SE\HighVoltage_SE.cs" />
+    <Compile Include="Safety\Safety_SE\InsulationResistance_SE.cs" />
+    <Compile Include="Universal\AgingTest_AC.cs" />
+    <Compile Include="Universal\ChargingControl.cs" />
+    <Compile Include="AC\GB_AC\CPOverVoltage.cs" />
+    <Compile Include="AC\GB_AC\CPOverVoltage_GB_AC.cs" />
+    <Compile Include="AC\GB_AC\RcResistance_GB_AC.cs" />
+    <Compile Include="AC\GB_AC\S2ControlTesting_GB_AC.cs" />
+    <Compile Include="AC\GB_AC\StartAndChargingPhase_GB_AC.cs" />
+    <Compile Include="AC\UA_AC\CPDisConnection.cs" />
+    <Compile Include="AC\UA_AC\CPDutyCycle.cs" />
+    <Compile Include="AC\UA_AC\CPFrequency.cs" />
+    <Compile Include="AC\UA_AC\CPGrounding.cs" />
+    <Compile Include="Universal\ContactorAdhesionTest_LN.cs" />
+    <Compile Include="Universal\InputFreqError.cs" />
+    <Compile Include="Universal\InputVoltageError.cs" />
+    <Compile Include="AC\UA_AC\NormalEndCharge.cs" />
+    <Compile Include="AC\UA_AC\OutputOverCurrent.cs" />
+    <Compile Include="AC\UA_AC\PEDisConnection.cs" />
+    <Compile Include="AC\UA_AC\PowerInputLost.cs" />
+    <Compile Include="AC\UA_AC\S2ControlTesting.cs" />
+    <Compile Include="AC\UA_AC\StartAndChargingPhase.cs" />
+    <Compile Include="AC\UA_AC\StartAndChargingPhase_UA_AC.cs" />
+    <Compile Include="BusinessBase.cs" />
+    <Compile Include="Universal\ContactorAdhesionTest.cs" />
+    <Compile Include="Universal\ContactorAdhesionTest_K.cs" />
+    <Compile Include="DataAnalysis.cs" />
+    <Compile Include="Universal\InputVoltageError_TM.cs" />
+    <Compile Include="Universal\LeakageCurrentTest_CK.cs" />
+    <Compile Include="Universal\LeakageCurrentTest_Joker.cs" />
+    <Compile Include="Universal\LeakageCurrentTest_QC.cs" />
+    <Compile Include="Universal\LeakageCurrentTest_TM.cs" />
+    <Compile Include="Universal\LNReverse.cs" />
+    <Compile Include="Universal\LNReverse_DIO.cs" />
+    <Compile Include="Universal\LockingDevice.cs" />
+    <Compile Include="Safety\EarthingConductor.cs" />
+    <Compile Include="Universal\EmergencyStop.cs" />
+    <Compile Include="Safety\HighVoltage.cs" />
+    <Compile Include="Safety\InsulationResistance.cs" />
+    <Compile Include="Universal\LeakageCurrentTest.cs" />
+    <Compile Include="Universal\ManualCheck_General.cs" />
+    <Compile Include="Universal\ManualVerify.cs" />
+    <Compile Include="Safety\ReadMe.cs" />
+    <Compile Include="Safety\Safety_DL\EarthingConductor_DL.cs" />
+    <Compile Include="Safety\Safety_DL\HighVoltage_DL.cs" />
+    <Compile Include="Safety\Safety_DL\InsulationResistance_DL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Universal\PEDisconnection_AC.cs" />
+    <Compile Include="Universal\SelectGear.cs" />
+    <Compile Include="Universal\StandbyPowerConsumption.cs" />
+    <Compile Include="Universal\SwipingCardTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SaiTer.ATE.Controls\SaiTer.ATE.Controls.csproj">
+      <Project>{fc1ef210-91a5-450f-9d5a-b1a0b6b46047}</Project>
+      <Name>SaiTer.ATE.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.DataModel\SaiTer.ATE.DataModel.csproj">
+      <Project>{d5a2d6b4-9516-4d5e-9b0a-e68891f05d45}</Project>
+      <Name>SaiTer.ATE.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.EquipMent\SaiTer.ATE.EquipMent.csproj">
+      <Project>{f4718a5e-8722-43b9-9f1a-ff6c1a9f660f}</Project>
+      <Name>SaiTer.ATE.EquipMent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.IDAL\SaiTer.ATE.IDAL.csproj">
+      <Project>{3d7cc45f-a46e-4dc5-871a-03d35207bb4d}</Project>
+      <Name>SaiTer.ATE.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.InterFace\SaiTer.ATE.InterFace.csproj">
+      <Project>{211b5cc1-59d4-480e-9307-978486139b83}</Project>
+      <Name>SaiTer.ATE.InterFace</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.MES\SaiTer.ATE.MES.csproj">
+      <Project>{6BAA0E7B-E957-402B-8723-7D5ACB045BEC}</Project>
+      <Name>SaiTer.ATE.MES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaiTer.ATE.PortManage\SaiTer.ATE.PortManage.csproj">
+      <Project>{fa8893e7-0d9c-4a84-aff5-d7b24eda19d3}</Project>
+      <Name>SaiTer.ATE.PortManage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AC\TBAuto\ReadMe.txt" />
+    <Content Include="AC\TB\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CCS2\PT\AC\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

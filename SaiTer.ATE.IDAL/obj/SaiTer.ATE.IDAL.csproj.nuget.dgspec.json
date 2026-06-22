@@ -1,0 +1,146 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.IDAL\\SaiTer.ATE.IDAL.csproj": {}
+  },
+  "projects": {
+    "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.DataModel\\SaiTer.ATE.DataModel.csproj": {
+      "restore": {
+        "projectUniqueName": "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.DataModel\\SaiTer.ATE.DataModel.csproj",
+        "projectName": "SaiTer.ATE.DataModel",
+        "projectPath": "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.DataModel\\SaiTer.ATE.DataModel.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net48": {
+            "framework": "net48",
+            "projectReferences": {
+              "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.StringResources\\SaiTer.ATE.StringResources.csproj": {
+                "projectPath": "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.StringResources\\SaiTer.ATE.StringResources.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "framework": "net48"
+        }
+      }
+    },
+    "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.IDAL\\SaiTer.ATE.IDAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.IDAL\\SaiTer.ATE.IDAL.csproj",
+        "projectName": "SaiTer.ATE.IDAL",
+        "projectPath": "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.IDAL\\SaiTer.ATE.IDAL.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.IDAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "UsingMicrosoftNETSdk": false,
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "framework": "net48",
+            "projectReferences": {
+              "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.DataModel\\SaiTer.ATE.DataModel.csproj": {
+                "projectPath": "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.DataModel\\SaiTer.ATE.DataModel.csproj"
+              }
+            }
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "framework": "net48",
+          "dependencies": {
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.6.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "SixLabors.Fonts": {
+              "target": "Package",
+              "version": "[1.0.0-beta19, )"
+            },
+            "Spire.Doc": {
+              "target": "Package",
+              "version": "[13.10.3, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.117, )"
+            },
+            "System.Memory": {
+              "target": "Package",
+              "version": "[4.5.5, )"
+            },
+            "System.Runtime.CompilerServices.Unsafe": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "sqliteSugar": {
+              "target": "Package",
+              "version": "[3.5.2.7, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.StringResources\\SaiTer.ATE.StringResources.csproj": {
+      "restore": {
+        "projectUniqueName": "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.StringResources\\SaiTer.ATE.StringResources.csproj",
+        "projectName": "SaiTer.ATE.StringResources",
+        "projectPath": "F:\\Git_proj\\SaiterATE-Base\\SaiTer.ATE.StringResources\\SaiTer.ATE.StringResources.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net48": {
+            "framework": "net48",
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "framework": "net48"
+        }
+      }
+    }
+  }
+}

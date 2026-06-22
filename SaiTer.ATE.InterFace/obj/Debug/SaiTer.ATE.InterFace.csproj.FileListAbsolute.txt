@@ -1,0 +1,7 @@
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.InterFace.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.InterFace.pdb
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.InterFace\obj\Debug\SaiTer.ATE.InterFace.csproj.AssemblyReference.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.InterFace\obj\Debug\SaiTer.ATE.InterFace.csproj.CoreCompileInputs.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.InterFace\obj\Debug\SaiTer.ATE.InterFace.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.InterFace\obj\Debug\SaiTer.ATE.InterFace.pdb
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.InterFace\obj\Debug\SaiTer.A.EC985942.Up2Date

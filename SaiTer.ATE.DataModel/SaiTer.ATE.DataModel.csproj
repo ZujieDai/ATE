@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5A2D6B4-9516-4D5E-9B0A-E68891F05D45}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SaiTer.ATE.DataModel</RootNamespace>
+    <AssemblyName>SaiTer.ATE.DataModel</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\SaiTer.ATE.Exe\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ConfigurationSettings, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SaiTer.ATE.Exe\Debug\ConfigurationSettings.dll</HintPath>
+    </Reference>
+    <Reference Include="SaiTer.ATE.Log, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SaiTer.ATE.Exe\Debug\SaiTer.ATE.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllEquipStateData.cs" />
+    <Compile Include="BaseConvert.cs" />
+    <Compile Include="BMS\SettingCharging.cs" />
+    <Compile Include="BMS\SettingCharging_JP_DC.cs" />
+    <Compile Include="CANPacket.cs" />
+    <Compile Include="CAN\BaseConvert.cs" />
+    <Compile Include="CAN\BatteryType.cs" />
+    <Compile Include="CAN\CanMsg.cs" />
+    <Compile Include="CAN\CanMsgId.cs" />
+    <Compile Include="CAN\CANMsgModel.cs" />
+    <Compile Include="CAN\CanMsgRich.cs" />
+    <Compile Include="CAN\CanProtocolVer.cs" />
+    <Compile Include="CAN\CommonCAN.cs" />
+    <Compile Include="CAN\ConsistMsg.cs" />
+    <Compile Include="CAN\EachFrameModel.cs" />
+    <Compile Include="CAN\FrameLen.cs" />
+    <Compile Include="CAN\Function.cs" />
+    <Compile Include="CAN\GETCANDATA.cs" />
+    <Compile Include="CAN\GETDateWave.cs" />
+    <Compile Include="CAN\Machine.cs" />
+    <Compile Include="CAN\MatchClass.cs" />
+    <Compile Include="CAN\MsgCommon.cs" />
+    <Compile Include="CAN\MsgManager.cs" />
+    <Compile Include="CAN\MsgConfig.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_BCL.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_BCP.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_BCS.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_BEM.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_BHM.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_BMT.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_BMV.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_BRM.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_BRO.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_BSD.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_BSM.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_BSP.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_BST.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_CCS.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_CEM.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_CHM.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_CML.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_CRM.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_CRO.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_CSD.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_CST.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_CTS.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_JPDC100.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_JPDC101.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_JPDC102.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_JPDC108.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_JPDC109.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_JPDC110.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_JPDC118.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_MutiPackageHead.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_MutiPackageReady.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_MutiPackageText.cs" />
+    <Compile Include="CAN\MsgSorts\Msg_Undefined.cs" />
+    <Compile Include="CAN\MutiPackage.cs" />
+    <Compile Include="CAN\PGN.cs" />
+    <Compile Include="CAN\Punctuation.cs" />
+    <Compile Include="CAN\SPN.cs" />
+    <Compile Include="CAN\ValueManager.cs" />
+    <Compile Include="DataBaseModel\EquipMentCMD.cs" />
+    <Compile Include="DataBaseModel\EquipmentConfigModel.cs" />
+    <Compile Include="DataBaseModel\TemplateRuleModel.cs" />
+    <Compile Include="EnumModel\EmEquipMentCMD.cs" />
+    <Compile Include="EnumModel\EmGBDC_Ver.cs" />
+    <Compile Include="EnumModel\EmTrialState.cs" />
+    <Compile Include="EquipDescripe.cs" />
+    <Compile Include="EnumHelper.cs" />
+    <Compile Include="EquipStateData\ACSource_StateData.cs" />
+    <Compile Include="EquipStateData\AuxiliaryLoadCtrl_StateData.cs" />
+    <Compile Include="EquipStateData\BMS_AC_StateData.cs" />
+    <Compile Include="EquipStateData\BMS_DC_StateData.cs" />
+    <Compile Include="EnumModel\EmChargerType.cs" />
+    <Compile Include="EnumModel\EmChargingState.cs" />
+    <Compile Include="EnumModel\EmLightColor.cs" />
+    <Compile Include="EnumModel\EmTrialResult.cs" />
+    <Compile Include="EnumModel\EmTrialType.cs" />
+    <Compile Include="EquipStateData\BMS_EU_DC_StateData.cs" />
+    <Compile Include="EquipStateData\BMS_JP_DC_StateData.cs" />
+    <Compile Include="EquipStateData\BMS_USA_DC_StateData.cs" />
+    <Compile Include="EquipStateData\Charger_NTGX_StateData.cs" />
+    <Compile Include="EquipStateData\ElectronicLoad_StateData.cs" />
+    <Compile Include="EquipStateData\FeedbackLoadAC_StateData.cs" />
+    <Compile Include="EquipStateData\FeedbackLoad_StateData.cs" />
+    <Compile Include="EquipStateData\GDM9061_StateData.cs" />
+    <Compile Include="EquipStateData\LoopFeedbackLoad_StateData.cs" />
+    <Compile Include="EquipStateData\MultiMeter_StateData.cs" />
+    <Compile Include="EquipStateData\PowerAnalyzer_StateData.cs" />
+    <Compile Include="EquipStateData\QCLeakageCurrent_StateData.cs" />
+    <Compile Include="EquipStateData\ResisLoad_MultiChannel_AC_StateData.cs" />
+    <Compile Include="EquipStateData\ResisLoad_MultiChannel_DC_StateData.cs" />
+    <Compile Include="EquipStateData\ResisLoad_StateData.cs" />
+    <Compile Include="EquipStateData\SDSOscilloscope_StateData.cs" />
+    <Compile Include="EquipStateData\StateDataBase.cs" />
+    <Compile Include="EquipStateData\ZJLeakageCurrent_StateData.cs" />
+    <Compile Include="IirFilter\IirFilter.cs" />
+    <Compile Include="Language\LanguageManager.cs" />
+    <Compile Include="PacketHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ChargerInfoModel.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProtocolHelper.cs" />
+    <Compile Include="Protocol\GBCANMsg.cs" />
+    <Compile Include="Protocol\OffsetConfig.cs" />
+    <Compile Include="StatisticsModel.cs" />
+    <Compile Include="Struct\StChargerCheckState.cs" />
+    <Compile Include="Struct\StResultData.cs" />
+    <Compile Include="Struct\StSchemeInfo.cs" />
+    <Compile Include="Struct\StTreeNodeTag.cs" />
+    <Compile Include="Struct\StTrialItem.cs" />
+    <Compile Include="DataBaseModel\TrialDataModel.cs" />
+    <Compile Include="TestWorkParam.cs" />
+    <Compile Include="UserInfoModel.cs" />
+    <Compile Include="WaveRecoder\WaveData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SaiTer.ATE.StringResources\SaiTer.ATE.StringResources.csproj">
+      <Project>{3ffbd6b1-cb29-4afe-8c6c-fac6f491bc19}</Project>
+      <Name>SaiTer.ATE.StringResources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,12 @@
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.Manage.dll.config
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.Manage.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\SaiTer.ATE.Manage.pdb
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Manage\obj\Debug\SaiTer.ATE.Manage.csproj.AssemblyReference.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Manage\obj\Debug\SaiTer.ATE.Manage.csproj.CoreCompileInputs.cache
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Manage\obj\Debug\SaiTer.ATE.Manage.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Manage\obj\Debug\SaiTer.ATE.Manage.pdb
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Manage\obj\Debug\SaiTer.A.66239859.Up2Date
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\x86\libHarfBuzzSharp.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\x64\libHarfBuzzSharp.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\arm64\libHarfBuzzSharp.dll
+F:\Git_proj\SaiterATE-Base\SaiTer.ATE.Exe\Debug\libHarfBuzzSharp.dylib
